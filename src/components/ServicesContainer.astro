@@ -1,0 +1,14 @@
+---
+const { title, description } = Astro.props;
+---
+
+<div
+  class="rounded-lg relative p-5 overflow-hidden h-full min-h-52 group transition-transform duration-300 hover:scale-[1.01]"
+>
+  <div class="absolute bottom-6 left-0 z-10 text-white px-5">
+    <h2 class="text-xl md:text-2xl font-semibold mb-1">{title}</h2>
+    <p class="text-sm md:text-base leading-snug">{description}</p>
+  </div>
+  <slot />
+  <div class="absolute w-full h-full top-0 left-0 bg-black/70"></div>
+</div>

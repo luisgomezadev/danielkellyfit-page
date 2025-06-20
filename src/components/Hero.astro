@@ -1,0 +1,53 @@
+---
+import ButtonSocialLink from './ButtonSocialLink.astro';
+import FacebooIcon from '../assets/icons/FacebookIcon.astro';
+import InstagramIcon from '../assets/icons/InstagramIcon.astro';
+import TikTokIcon from '../assets/icons/TikTokIcon.astro';
+
+const { id } = Astro.props;
+---
+
+<section
+  class="bg-[#0D110F] pt-24 py-16 overflow-hidden relative md:h-[550px] scroll-mt-30 md:text-start text-center"
+  id={id}
+>
+  <div class="flex gap-5 text-white h-full items-center max-w-7xl mx-auto px-10">
+    <header class="z-20 max-w-xl">
+      <h1 class="text-4xl md:text-6xl font-bold uppercase font-serif tracking-wide">
+        Daniel Kelly
+      </h1>
+      <h3 class="text-xl md:text-2xl mb-4 text-green-600">Entrenador Personal</h3>
+      <p class="text-sm md:text-lg opacity-80 text-pretty">
+        Si vas al gimnasio y no sabes que hacer y tampoco como alimentarte, pues yo te ayudo.
+      </p>
+      <div class="flex gap-4 mt-6 md:justify-start justify-center">
+        <ButtonSocialLink
+          href="https://www.facebook.com/profile.php?id=100087054653965"
+          className="hover:text-blue-800"
+        >
+          <FacebooIcon />
+        </ButtonSocialLink>
+        <ButtonSocialLink
+          href="https://www.instagram.com/danielkelly_fit/"
+          className="hover:text-[#9C3594]"
+        >
+          <InstagramIcon />
+        </ButtonSocialLink>
+        <ButtonSocialLink
+          href="https://www.tiktok.com/@danielkellys?lang=es-419"
+          className="hover:text-black"
+        >
+          <TikTokIcon />
+        </ButtonSocialLink>
+      </div>
+    </header>
+    <picture class="md:z-10">
+      <img
+        src="/images/daniel_training.webp"
+        class="object-cover absolute mask-x-from-80% mask-t-from-90% h-64 md:h-[480px] right-10 lg:right-64 bottom-0"
+        alt="Foto de Daniel Kelly"
+      />
+    </picture>
+    <div class="absolute w-full h-full top-0 left-0 bg-black/70"></div>
+  </div>
+</section>

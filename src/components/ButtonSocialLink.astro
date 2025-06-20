@@ -1,0 +1,18 @@
+---
+const { href, className, bg = 'bg-white' } = Astro.props;
+---
+
+<a
+  class={`flex items-center font-medium ${bg} text-black p-1 md:p-2 rounded-full gap-2 hover:scale-105 transition-all duration-300 cursor-pointer ${className}`}
+  href={href}
+  target="_blank"
+>
+  <slot />
+</a>
+
+<style>
+  a:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #000;
+    transform: translateY(-0.15em);
+  }
+</style>

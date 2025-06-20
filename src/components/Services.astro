@@ -1,0 +1,90 @@
+---
+import ServicesContainer from './ServicesContainer.astro';
+import ButtonSocialLink from './ButtonSocialLink.astro';
+import FacebooIcon from '../assets/icons/FacebookIcon.astro';
+import InstagramIcon from '../assets/icons/InstagramIcon.astro';
+import WhatsappIcon from '../assets/icons/WhatsappIcon.astro';
+
+const { id } = Astro.props;
+---
+
+<section class="bg-gray-200 scroll-mt-10" id={id}>
+  <div class="max-w-7xl mx-auto px-10 py-14">
+    <div class="flex flex-col md:flex-row gap-14 h-full">
+      <div class="w-full md:w-80">
+        <h2
+          class="w-fit uppercase mx-auto md:ml-0 text-xl md:text-3xl font-semibold mb-7"
+        >
+          Mis Servicios
+        </h2>
+        <p class="mb-7 opacity-70">
+          Como entrenador personal, ofrezco programas personalizados enfocados en resultados reales,
+          sostenibles y adaptados a tus necesidades. Ya sea que entrenes en casa, en el gimnasio o
+          de forma online, tengo un plan para ti.
+        </p>
+        <p>
+          Para más información o consultas, puedes contactarme a través de mis redes sociales.
+          Estaré encantado de ayudarte.
+        </p>
+        <div class="flex gap-4 mt-6">
+          <ButtonSocialLink
+            href="https://www.facebook.com/profile.php?id=100087054653965"
+            className="hover:text-blue-800"
+          >
+            <FacebooIcon />
+          </ButtonSocialLink>
+          <ButtonSocialLink
+            href="https://www.instagram.com/danielkelly_fit/"
+            className="hover:text-[#9C3594]"
+          >
+            <InstagramIcon />
+          </ButtonSocialLink>
+          <ButtonSocialLink href="https://wa.me/573022071208" className="hover:text-green-600">
+            <WhatsappIcon />
+          </ButtonSocialLink>
+        </div>
+      </div>
+      <div class="flex-1 min-h-[400px]">
+        <div class="grid gap-4 lg:grid-cols-2 lg:grid-rows-2 grid-cols-1 h-full">
+          <div class="md:row-span-2">
+            <ServicesContainer
+              title="Entrenamiento Personalizado"
+              description="Plan de entrenamiento 100% adaptado a tus objetivos, condición física y estilo de vida. Incluye seguimiento, ajustes y asesoría continua."
+            >
+              <img
+                src="/images/gym.webp"
+                class="absolute w-full h-full top-0 left-0 object-cover"
+                alt="Gym"
+              />
+            </ServicesContainer>
+          </div>
+          <div class="md:row-span-1">
+            <ServicesContainer
+              title="Asesoría Nutricional"
+              description="Guía de hábitos alimenticios saludables para complementar tu entrenamiento. Aprenderás a comer mejor sin dietas extremas."
+              span="row-span-2"
+            >
+              <img
+                src="/images/nutrition.webp"
+                class="absolute w-full h-full top-0 left-0 object-cover"
+                alt="Nutrición"
+              />
+            </ServicesContainer>
+          </div>
+          <div class="md:row-span-1">
+            <ServicesContainer
+              title="Guía de Suplementos"
+              description="Te ayudo a identificar cuáles suplementos realmente necesitas según tus objetivos, tipo de entrenamiento y estilo de vida."
+            >
+              <img
+                src="/images/supplements.webp"
+                class="absolute w-full h-full top-0 left-0 object-cover"
+                alt="Suplementos"
+              />
+            </ServicesContainer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,112 @@
+---
+import ServicesContainer from './ServicesContainer.astro';
+import ButtonSocialLink from './ButtonSocialLink.astro';
+import FacebooIcon from '../assets/icons/FacebookIcon.astro';
+import InstagramIcon from '../assets/icons/InstagramIcon.astro';
+import WhatsappIcon from '../assets/icons/WhatsappIcon.astro';
+
+const { id } = Astro.props;
+---
+
+<section class="bg-gray-200 scroll-mt-10" id={id}>
+  <div class="max-w-7xl mx-auto px-10 py-14">
+    <div class="flex flex-col md:flex-row gap-14 h-full">
+      <div class="w-full md:w-[1000px]">
+        <h2 class="w-fit uppercase mx-auto md:ml-0 text-xl md:text-3xl font-semibold mb-7">
+          Mis Eventos
+        </h2>
+        <div class="">
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">
+            - Workout on The Beach – Edición #5
+          </h2>
+          <p class="text-gray-600 text-base md:text-lg mb-6">
+            El pasado <strong>23 de marzo de 2025</strong> vivimos la quinta edición de <strong
+              >Workout on The Beach</strong
+            >, un evento único que combina <em>entrenamiento, energía y comunidad</em> en un escenario
+            natural inigualable: la playa.
+          </p>
+
+          <div class="bg-gray-100 rounded-lg shadow-md p-6 max-w-xl mx-auto mb-10">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">¿Qué incluyó esta edición?</h3>
+            <ul class="text-gray-700 space-y-2 text-left">
+              <li>✅ Entrenamiento funcional grupal en la playa</li>
+              <li>✅ Desayuno saludable post-entreno</li>
+              <li>✅ Hidratación para mantener el rendimiento</li>
+              <li>✅ Desafíos y premios para los participantes</li>
+            </ul>
+          </div>
+
+          <p class="text-gray-700 font-medium">
+            📲 <span class="text-green-600 font-semibold">¡No te pierdas la próxima edición!</span
+            ><br />
+            Sígueme en mis redes sociales y mantente pendiente de la fecha del próximo <strong
+              >Workout on The Beach</strong
+            >.
+          </p>
+        </div>
+      </div>
+      <div
+        class="relative w-full max-w-md aspect-[4/5] mx-auto overflow-hidden rounded-lg shadow-lg"
+      >
+        <div class="relative aspect-[4/5] w-full max-w-md mx-auto">
+          <div id="slider" class="absolute inset-0 w-full h-full">
+            <img
+              src="/images/wotb/1.webp"
+              class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+              alt="Imagen 1"
+            />
+            <img
+              src="/images/wotb/2.webp"
+              class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+              alt="Imagen 2"
+            />
+            <img
+              src="/images/wotb/3.webp"
+              class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+              alt="Imagen 3"
+            />
+            <img
+              src="/images/wotb/4.webp"
+              class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+              alt="Imagen 4"
+            />
+            <img
+              src="/images/wotb/5.webp"
+              class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+              alt="Imagen 5"
+            />
+            <img
+              src="/images/wotb/6.webp"
+              class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+              alt="Imagen 6"
+            />
+            <img
+              src="/images/wotb/7.webp"
+              class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+              alt="Imagen 7"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  const images = document.querySelectorAll('#slider img');
+  let current = 0;
+
+  function showSlide(index) {
+    images.forEach((img, i) => {
+      img.style.opacity = i === index ? '1' : '0';
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % images.length;
+    showSlide(current);
+  }
+
+  showSlide(current);
+  setInterval(nextSlide, 4000);
+</script>
