@@ -7,7 +7,6 @@ const { id } = Astro.props;
 
 <section id={id} class="bg-white text-black py-16 scroll-mt-10">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6 md:px-10">
-
     <picture class="w-56 md:w-72 shrink-0 mx-auto md:mx-0">
       <img
         src="/images/dekaa_logo.webp"
@@ -16,8 +15,8 @@ const { id } = Astro.props;
       />
     </picture>
 
-    <div class="flex-1 text-center md:text-left">
-      <h2 class="uppercase text-2xl md:text-4xl font-bold mb-4 tracking-wide text-gray-800">
+    <div class="flex-1">
+      <h2 class="uppercase text-xl md:text-3xl font-semibold mb-4 tracking-wide text-gray-800">
         Mi Tienda – Dekaa.Fit
       </h2>
       <p class="text-gray-700 text-base md:text-lg mb-3">
@@ -29,7 +28,7 @@ const { id } = Astro.props;
         “No es solo entrenar cómodo, también es verse nítido.”
       </p>
 
-      <div class="flex justify-center md:justify-start gap-4 flex-wrap">
+      <div class="flex gap-4 flex-wrap">
         <ButtonSocialLink
           href="/files/catalogo_dekaafit.pdf"
           bg="bg-green-600 hover:bg-green-700"

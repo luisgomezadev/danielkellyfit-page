@@ -12,9 +12,7 @@ const { id } = Astro.props;
   <div class="max-w-7xl mx-auto px-10 py-14">
     <div class="flex flex-col md:flex-row gap-14 h-full">
       <div class="w-full md:w-80">
-        <h2
-          class="w-fit uppercase mx-auto md:ml-0 text-xl md:text-3xl font-semibold mb-7"
-        >
+        <h2 class="w-fit uppercase mx-auto md:ml-0 text-xl md:text-3xl font-semibold mb-7">
           Mis Servicios
         </h2>
         <p class="mb-7 opacity-70">
@@ -29,17 +27,23 @@ const { id } = Astro.props;
         <div class="flex gap-4 mt-6">
           <ButtonSocialLink
             href="https://www.facebook.com/profile.php?id=100087054653965"
-            className="hover:text-blue-800"
+            bg="md:bg-white bg-green-600"
+            className="hover:text-blue-800 text-white md:text-black"
           >
             <FacebooIcon />
           </ButtonSocialLink>
           <ButtonSocialLink
             href="https://www.instagram.com/danielkelly_fit/"
-            className="hover:text-[#9C3594]"
+            bg="md:bg-white bg-green-600"
+            className="hover:text-[#9C3594] text-white md:text-black"
           >
             <InstagramIcon />
           </ButtonSocialLink>
-          <ButtonSocialLink href="https://wa.me/573022071208" className="hover:text-green-600">
+          <ButtonSocialLink
+            href="https://wa.me/573022071208"
+            bg="md:bg-white bg-green-600"
+            className="hover:text-green-600 text-white md:text-black"
+          >
             <WhatsappIcon />
           </ButtonSocialLink>
         </div>
