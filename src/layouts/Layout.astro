@@ -13,13 +13,42 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/images/dk_logo_transparent.webp" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta
+      name="keywords"
+      content="Daniel Kelly, Personal Trainer, Entrenador Personal, Entrenamiento, Asesoria"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://danielkellyfit.vercel.app/" />
+    <meta property="og:title" content="Daniel Kelly | Entrenador Personal" />
+    <meta property="og:site_name" content="Daniel Kelly | Entrenador Personal" />
+    <meta
+      property="og:description"
+      content="Bienvenidos a mi pagina web personal. Soy Daniel Kelly, entrenador personal especializado en transformación física, hábitos saludables y bienestar integral."
+    />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/erickvpomie/dev-portfolio/main/public/og-image.webp"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://danielkellyfit.vercel.app/" />
+    <meta property="twitter:title" content="Daniel Kelly | Entrenador Personal" />
+    <meta
+      property="twitter:description"
+      content="Bienvenidos a mi pagina web personal. Soy Daniel Kelly, entrenador personal especializado en transformación física, hábitos saludables y bienestar integral."
+    />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/LuisGomez11/dev-portfolio/main/public/og-image.webp"
+    />
   </head>
   <body class="bg-gray-200">
     <Navbar />
     <main>
       <slot />
     </main>
-		<Footer />
+    <Footer />
   </body>
 </html>
 
