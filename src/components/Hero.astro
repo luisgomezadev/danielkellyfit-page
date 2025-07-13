@@ -9,11 +9,12 @@ const { id } = Astro.props;
 
 <section id={id} class="scroll-mt-30 bg-black text-white">
   <div
-    class="relative grid lg:grid-cols-2 gap-x-12 gap-y-24 items-center min-h-screen max-w-7xl mx-auto md:px-8 px-6 py-12 text-center md:text-start"
+    class="relative grid lg:grid-cols-2 gap-x-12 gap-y-24 items-center min-h-screen max-w-7xl mx-auto md:px-8 px-6 py-12 lg:py-0"
   >
     <header class="z-20 max-w-xl">
+      <h1 class="text-5xl font-semibold mb-1">Hola, soy</h1>
       <h1 class="text-4xl md:text-6xl font-bold uppercase font-serif tracking-wide">
-        Hola, soy Daniel Kelly
+        Daniel Kelly
       </h1>
       <h3 class="text-xl md:text-2xl mb-4 text-green-600">Entrenador Personal</h3>
       <p class="text-base md:text-lg opacity-80 text-pretty text-start">
@@ -46,10 +47,10 @@ const { id } = Astro.props;
         </ButtonSocialLink>
       </div>
     </header>
-    <picture class="md:z-10 absolute">
+    <picture class="lg:z-10 absolute lg:relative">
       <img
         src="/images/daniel_training.webp"
-        class="object-cover mask-x-from-80% mask-t-from-90% h-[500px] md:h-[600px] right-10 lg:right-32 bottom-0"
+        class="object-cover mask-x-from-80% mask-y-from-90% h-[500px] md:h-[600px] right-10 lg:right-32 bottom-0"
         alt="Foto de Daniel Kelly"
       />
     </picture>
