@@ -12,18 +12,22 @@ const { id } = Astro.props;
   <div class="max-w-7xl mx-auto px-10 py-14">
     <div class="flex flex-col md:flex-row gap-14 h-full">
       <div class="w-full md:w-80">
-        <h2 class="w-fit uppercase mx-auto md:ml-0 text-xl md:text-3xl font-semibold mb-7">
+        <h2
+          class="uppercase text-2xl md:text-4xl font-bold mb-4 text-gray-800 md:text-start text-center"
+        >
           Mis Servicios
         </h2>
-        <p class="mb-7 opacity-70">
-          Como entrenador personal, ofrezco programas personalizados enfocados en resultados reales,
-          sostenibles y adaptados a tus necesidades. Ya sea que entrenes en casa, en el gimnasio o
-          de forma online, tengo un plan para ti.
-        </p>
-        <p>
-          Para más información o consultas, puedes contactarme a través de mis redes sociales.
-          Estaré encantado de ayudarte.
-        </p>
+        <div class="leading-relaxed">
+          <p class="mb-7 opacity-70">
+            Como entrenador personal, ofrezco programas personalizados enfocados en resultados
+            reales, sostenibles y adaptados a tus necesidades. Ya sea que entrenes en casa, en el
+            gimnasio o de forma online, tengo un plan para ti.
+          </p>
+          <p>
+            Para más información o consultas, puedes contactarme a través de mis redes sociales.
+            Estaré encantado de ayudarte.
+          </p>
+        </div>
         <div class="flex gap-4 mt-6">
           <ButtonSocialLink
             href="https://www.facebook.com/profile.php?id=100087054653965"
