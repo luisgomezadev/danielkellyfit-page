@@ -7,20 +7,25 @@ import TikTokIcon from '../assets/icons/TikTokIcon.astro';
 const { id } = Astro.props;
 ---
 
-<section
-  class="bg-[#0D110F] pt-24 py-16 overflow-hidden relative md:h-[550px] scroll-mt-30 md:text-start text-center"
-  id={id}
->
-  <div class="flex gap-5 text-white h-full items-center max-w-7xl mx-auto px-10">
+<section id={id} class="scroll-mt-30 bg-black text-white">
+  <div
+    class="relative grid lg:grid-cols-2 gap-x-12 gap-y-24 items-center min-h-screen max-w-7xl mx-auto md:px-8 px-6 py-12 text-center md:text-start"
+  >
     <header class="z-20 max-w-xl">
       <h1 class="text-4xl md:text-6xl font-bold uppercase font-serif tracking-wide">
-        Daniel Kelly
+        Hola, soy Daniel Kelly
       </h1>
       <h3 class="text-xl md:text-2xl mb-4 text-green-600">Entrenador Personal</h3>
-      <p class="text-sm md:text-lg opacity-80 text-pretty">
-        Si vas al gimnasio y no sabes que hacer y tampoco como alimentarte, pues yo te ayudo.
+      <p class="text-base md:text-lg opacity-80 text-pretty text-start">
+        Te guío en tu transformación física y mental con planes de entrenamiento y nutrición
+        personalizados, pensados para que avances de forma segura y consigas resultados reales.
       </p>
-      <div class="flex gap-4 mt-6 md:justify-start justify-center">
+
+      <p class="text-sm md:text-base text-pretty italic mt-2 text-green-300 text-start">
+        - Si vas al gimnasio y no sabes que hacer y tampoco como alimentarte, pues yo te ayudo.
+      </p>
+      <div class="flex gap-4 mt-6 justify-start items-center">
+        <p class="font-semibold">Sígueme por:</p>
         <ButtonSocialLink
           href="https://www.facebook.com/profile.php?id=100087054653965"
           className="hover:text-blue-800"
@@ -41,13 +46,13 @@ const { id } = Astro.props;
         </ButtonSocialLink>
       </div>
     </header>
-    <picture class="md:z-10">
+    <picture class="md:z-10 absolute">
       <img
         src="/images/daniel_training.webp"
-        class="object-cover absolute mask-x-from-80% mask-t-from-90% h-64 md:h-[480px] right-10 lg:right-64 bottom-0"
+        class="object-cover mask-x-from-80% mask-t-from-90% h-[500px] md:h-[600px] right-10 lg:right-32 bottom-0"
         alt="Foto de Daniel Kelly"
       />
     </picture>
-    <div class="absolute w-full h-full top-0 left-0 bg-black/70"></div>
+    <div class="absolute w-full h-full top-0 left-0 bg-black/90"></div>
   </div>
 </section>
