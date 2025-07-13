@@ -16,7 +16,7 @@ const { id } = Astro.props;
       <h1 class="text-5xl md:text-6xl font-bold uppercase font-serif tracking-wide">
         Daniel Kelly
       </h1>
-      <h3 class="text-xl md:text-2xl mb-4 text-green-600">Entrenador Personal</h3>
+      <h2 class="text-xl md:text-2xl mb-4 text-green-600">Entrenador Personal</h2>
       <p class="text-base md:text-lg opacity-80 text-pretty text-start">
         Te guío en tu transformación física y mental con planes de entrenamiento y nutrición
         personalizados, pensados para que avances de forma segura y consigas resultados reales.
@@ -28,20 +28,23 @@ const { id } = Astro.props;
       <div class="flex gap-4 mt-6 justify-start items-center">
         <p class="font-semibold">Sígueme por:</p>
         <ButtonSocialLink
+          title="Facebook"
           href="https://www.facebook.com/profile.php?id=100087054653965"
-          className="hover:text-blue-800"
+          className="hover:text-blue-800 text-black"
         >
           <FacebooIcon />
         </ButtonSocialLink>
         <ButtonSocialLink
+          title="Instagram"
           href="https://www.instagram.com/danielkelly_fit/"
-          className="hover:text-[#9C3594]"
+          className="hover:text-[#9C3594] text-black"
         >
           <InstagramIcon />
         </ButtonSocialLink>
         <ButtonSocialLink
+          title="Tik Tok"
           href="https://www.tiktok.com/@danielkellys?lang=es-419"
-          className="hover:text-black"
+          className="text-black"
         >
           <TikTokIcon />
         </ButtonSocialLink>

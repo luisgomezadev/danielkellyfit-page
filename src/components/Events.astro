@@ -1,14 +1,8 @@
 ---
-import ServicesContainer from './ServicesContainer.astro';
-import ButtonSocialLink from './ButtonSocialLink.astro';
-import FacebooIcon from '../assets/icons/FacebookIcon.astro';
-import InstagramIcon from '../assets/icons/InstagramIcon.astro';
-import WhatsappIcon from '../assets/icons/WhatsappIcon.astro';
-
 const { id } = Astro.props;
 ---
 
-<section class="bg-gray-200 scroll-mt-10" id={id}>
+<section class="bg-gray-200 scroll-mt-10 text-gray-800" id={id}>
   <div class="max-w-7xl mx-auto px-10 py-14">
     <div class="flex flex-col md:flex-row gap-14 h-full">
       <div class="w-full md:w-[1000px]">
@@ -39,7 +33,7 @@ const { id } = Astro.props;
           </div>
 
           <p class="text-gray-700 font-medium">
-            📲 <span class="text-green-600 font-semibold">¡No te pierdas la próxima edición!</span
+            📲 <span class="text-green-800 font-semibold">¡No te pierdas la próxima edición!</span
             ><br />
             Sígueme en mis redes sociales y mantente pendiente de la fecha del próximo <strong
               >Workout on The Beach</strong

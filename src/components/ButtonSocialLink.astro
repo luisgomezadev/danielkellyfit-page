@@ -1,11 +1,13 @@
 ---
-const { href, className, bg = 'bg-white' } = Astro.props;
+const { href, className, bg = 'bg-white', title } = Astro.props;
 ---
 
 <a
-  class={`flex items-center font-medium ${bg} text-black p-2 rounded-full gap-2 hover:scale-105 transition-all duration-300 cursor-pointer ${className}`}
+  class={`flex items-center font-medium ${bg} p-2 rounded-full gap-2 hover:scale-105 transition-all duration-300 cursor-pointer ${className}`}
   href={href}
   target="_blank"
+  aria-label={title}
+  title={title}
 >
   <slot />
 </a>
