@@ -3,7 +3,7 @@ const { id } = Astro.props;
 ---
 
 <section class="bg-white text-black py-16 scroll-mt-10" id={id}>
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+  <div class="max-w-7xl mx-auto md:px-8 px-4 flex flex-col md:flex-row items-center gap-10">
     <picture class="w-64 md:w-72 mx-auto md:mx-0">
       <img
         src="/images/daniel_running.webp"
@@ -13,7 +13,11 @@ const { id } = Astro.props;
     </picture>
 
     <div class="flex-1">
-      <h2 class="uppercase text-2xl md:text-4xl font-bold mb-4 text-gray-800 md:text-start text-center">Mi Perfil</h2>
+      <h2
+        class="uppercase text-2xl md:text-4xl font-bold mb-4 text-gray-800 md:text-start text-center"
+      >
+        Mi Perfil
+      </h2>
       <div class="text-gray-700 leading-relaxed space-y-4">
         <p>
           Mi nombre es Daniel Kelly Salcedo, soy entrenador personal certificado con 5 años de
