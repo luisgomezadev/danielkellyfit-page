@@ -1,3 +1,10 @@
+---
+import ProfileIcon from '../assets/icons/ProfileIcon.astro';
+import ServicesIcon from '../assets/icons/ServicesIcon.astro';
+import StoreIcon from '../assets/icons/StoreIcon.astro';
+import EventsIcon from '../assets/icons/EventsIcon.astro';
+---
+
 <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
   <div class="max-w-7xl mx-auto md:px-8 px-3">
     <div class="flex items-center justify-between h-12">
@@ -7,20 +14,38 @@
         </a>
       </div>
 
-      <div class="flex space-x-6 md:space-x-8">
-        <a aria-label="Perfil" href="#perfil" class="text-gray-800 hover:text-green-700 transition"
-          >Perfil</a
+      <div class="flex gap-x-6 md:gap-x-12">
+        <a
+          aria-label="Perfil"
+          href="#perfil"
+          class="text-gray-800 hover:text-green-700 flex gap-1 transition"
+        >
+          <div class="hidden md:block"><ProfileIcon /></div>
+          Perfil</a
         >
         <a
           aria-label="Servicios"
           href="#servicios"
-          class="text-gray-800 hover:text-green-700 transition">Servicios</a
+          class="text-gray-800 hover:text-green-700 flex gap-1 transition"
         >
-        <a aria-label="Tienda" href="#tienda" class="text-gray-800 hover:text-green-700 transition"
-          >Mi tienda</a
+          <div class="hidden md:block"><ServicesIcon /></div>
+          Servicios</a
         >
-        <a aria-label="Eventos" href="#eventos" class="text-gray-800 hover:text-green-700 transition"
-          >Eventos</a
+        <a
+          aria-label="Tienda"
+          href="#tienda"
+          class="text-gray-800 hover:text-green-700 flex gap-1 transition"
+        >
+          <div class="hidden md:block"><StoreIcon /></div>
+          Mi tienda</a
+        >
+        <a
+          aria-label="Eventos"
+          href="#eventos"
+          class="text-gray-800 hover:text-green-700 flex gap-1 transition"
+        >
+          <div class="hidden md:block"><EventsIcon /></div>
+          Eventos</a
         >
       </div>
     </div>
