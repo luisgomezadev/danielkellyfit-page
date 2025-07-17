@@ -35,17 +35,17 @@ const { id } = Astro.props;
         Mi Perfil
       </h2>
       <div class="text-gray-700 leading-relaxed space-y-4">
-        <p>
+        <p class="text-pretty">
           Mi nombre es Daniel Kelly Salcedo, soy entrenador personal certificado con 5 años de
           experiencia ayudando a personas a transformar su estilo de vida a través del ejercicio, la
           alimentación consciente y la motivación constante.
         </p>
-        <p>
+        <p class="text-pretty">
           He trabajado con todo tipo de clientes: desde principiantes hasta atletas, guiándolos
           hacia resultados sostenibles, ya sea pérdida de peso, ganancia muscular, mejora del
           rendimiento o simplemente sentirse mejor consigo mismos.
         </p>
-        <p>
+        <p class="text-pretty">
           Mi misión es ayudarte a construir un cuerpo fuerte, saludable y funcional, y que disfrutes
           el proceso mientras lo haces.
         </p>
@@ -53,6 +53,20 @@ const { id } = Astro.props;
       <p class="mt-6 text-green-700 font-medium italic">
         “Entrena por salud, continúa por pasión, y quédate por los resultados.”
       </p>
+      <div class="w-full mt-10 flex gap-y-3 justify-between items-center text-gray-800">
+        <div class="flex flex-col gap-y-1 text-center">
+          <span class="text-4xl font-semibold">+40</span>
+          <span>Alumnos</span>
+        </div>
+        <div class="flex flex-col gap-y-1 text-center">
+          <span class="text-4xl font-semibold">+5</span>
+          <span>Años de experiencia</span>
+        </div>
+        <div class="flex flex-col gap-y-1 text-center">
+          <span class="text-4xl font-semibold">12</span>
+          <span>Certificaciones</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
