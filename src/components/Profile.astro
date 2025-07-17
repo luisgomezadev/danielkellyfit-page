@@ -3,14 +3,30 @@ const { id } = Astro.props;
 ---
 
 <section class="bg-white text-black py-16 scroll-mt-10" id={id}>
-  <div class="max-w-7xl mx-auto md:px-8 px-4 flex flex-col md:flex-row items-center gap-10">
-    <picture class="w-64 md:w-72 mx-auto md:mx-0">
-      <img
-        src="/images/daniel_running.webp"
-        alt="Daniel haciendo running"
-        class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105"
-      />
-    </picture>
+  <div class="max-w-7xl mx-auto md:px-8 px-4 flex flex-col md:flex-row items-center gap-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <picture class="row-span-2 w-56 flex items-center">
+        <img
+          src="/images/daniel_running.webp"
+          alt="Daniel haciendo running"
+          class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105"
+        />
+      </picture>
+      <picture class="w-56 hidden md:block">
+        <img
+          src="/images/daniel_perfil.webp"
+          alt="Daniel haciendo running"
+          class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105"
+        />
+      </picture>
+      <picture class="w-56 hidden md:block">
+        <img
+          src="/images/daniel_perfil_2.webp"
+          alt="Daniel haciendo running"
+          class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105"
+        />
+      </picture>
+    </div>
 
     <div class="flex-1">
       <h2
