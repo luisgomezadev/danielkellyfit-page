@@ -10,31 +10,71 @@ const { id } = Astro.props;
 
 <section id={id} class="bg-white text-black py-14 scroll-mt-10">
   <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row gap-10 md:px-8 px-4">
-    <div class="relative w-full max-w-lg mx-auto overflow-hidden rounded-2xl">
-      <!-- Imagen mostrada -->
-      <img
-        id="gallery-image"
-        src="images/team/team_1.webp"
-        class="w-full h-[25rem] md:h-[32rem] object-cover transition-all duration-500 transit ease-in-out"
-        alt="Imagen galería"
-      />
-
-      <!-- Botón anterior -->
-      <button
-        onclick="prevImage()"
-        class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-black px-3 py-2 rounded-full shadow cursor-pointer"
-      >
-        <LeftIcon />
-      </button>
-
-      <button
-        onclick="nextImage()"
-        class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-black px-3 py-2 rounded-full shadow cursor-pointer"
-      >
-        <RightIcon />
-      </button>
-
-      <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2" id="indicators"></div>
+    <div class="relative w-full max-w-md h-[25rem] md:h-[32rem] mx-auto overflow-hidden rounded-lg">
+      <div class="relative h-[25rem] md:h-[32rem] w-full max-w-md mx-auto">
+        <div id="slider" class="absolute inset-0 w-full h-full">
+          <img
+            src="/images/team/team_1.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 1"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_2.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 2"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_3.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 3"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_4.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 4"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_5.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 5"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_6.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 6"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_7.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 7"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_8.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 7"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_9.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 7"
+            loading="lazy"
+          />
+          <img
+            src="/images/team/team_10.webp"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Imagen 7"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </div>
     <div class="flex-1">
       <h2
@@ -71,7 +111,7 @@ const { id } = Astro.props;
   </div>
 </section>
 
-<script>
+<!-- <script>
   const images = [
     'images/team/team_1.webp',
     'images/team/team_2.webp',
@@ -120,4 +160,22 @@ const { id } = Astro.props;
 
   // Inicializar
   updateImage();
+</script> -->
+<script type="module">
+  const images = document.querySelectorAll('#slider img');
+  let current = 0;
+
+  function showSlide(index) {
+    images.forEach((img, i) => {
+      img.style.opacity = i === index ? '1' : '0';
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % images.length;
+    showSlide(current);
+  }
+
+  showSlide(current);
+  setInterval(nextSlide, 3000);
 </script>

@@ -44,7 +44,7 @@ const { id } = Astro.props;
         class="relative w-full max-w-md aspect-[4/5] mx-auto overflow-hidden rounded-lg shadow-lg"
       >
         <div class="relative aspect-[4/5] w-full max-w-md mx-auto">
-          <div id="slider" class="absolute inset-0 w-full h-full">
+          <div id="slider_events" class="absolute inset-0 w-full h-full">
             <img
               src="/images/wotb/1.webp"
               class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
@@ -95,7 +95,7 @@ const { id } = Astro.props;
 </section>
 
 <script type="module">
-  const images = document.querySelectorAll('#slider img');
+  const images = document.querySelectorAll('#slider_events img');
   let current = 0;
 
   function showSlide(index) {
