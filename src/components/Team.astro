@@ -1,6 +1,8 @@
 ---
 import ButtonSocialLink from './ButtonSocialLink.astro';
 import InstagramIcon from '../assets/icons/InstagramIcon.astro';
+import RightIcon from '../assets/icons/RightIcon.astro';
+import LeftIcon from '../assets/icons/LeftIcon.astro';
 
 const { id } = Astro.props;
 ---
@@ -12,64 +14,80 @@ const { id } = Astro.props;
         <div id="slider" class="absolute inset-0 w-full h-full">
           <img
             src="/images/team/team_1.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 1"
             loading="lazy"
           />
           <img
             src="/images/team/team_2.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 2"
             loading="lazy"
           />
           <img
             src="/images/team/team_3.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 3"
             loading="lazy"
           />
           <img
             src="/images/team/team_4.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 4"
             loading="lazy"
           />
           <img
             src="/images/team/team_5.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 5"
             loading="lazy"
           />
           <img
             src="/images/team/team_6.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 6"
             loading="lazy"
           />
           <img
             src="/images/team/team_7.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 7"
             loading="lazy"
           />
           <img
             src="/images/team/team_8.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 7"
             loading="lazy"
           />
           <img
             src="/images/team/team_9.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 7"
             loading="lazy"
           />
           <img
             src="/images/team/team_10.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
             alt="Imagen 7"
             loading="lazy"
           />
+          <div class="bg-gray-200 absolute bottom-5 right-5 rounded-md overflow-hidden">
+            <div class="flex items-center">
+              <button
+                onclick="prevImage()"
+                class="p-2 cursor-pointer hover:bg-gray-300 active:bg-gray-300"
+              >
+                <LeftIcon />
+              </button>
+              <button
+                onclick="nextImage()"
+                class="p-2 cursor-pointer hover:bg-gray-300 active:bg-gray-300"
+              >
+                <RightIcon />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -168,11 +186,18 @@ const { id } = Astro.props;
     });
   }
 
-  function nextSlide() {
+  // ⬅️ Exponer función prevImage al scope global
+  window.prevImage = function () {
+    current = (current - 1 + images.length) % images.length;
+    showSlide(current);
+  };
+
+  // ➡️ Exponer función nextImage al scope global
+  window.nextImage = function () {
     current = (current + 1) % images.length;
     showSlide(current);
-  }
+  };
 
+  // Mostrar primer slide al cargar
   showSlide(current);
-  setInterval(nextSlide, 3000);
 </script>
