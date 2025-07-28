@@ -1,94 +1,32 @@
 ---
-import ButtonSocialLink from './ButtonSocialLink.astro';
-import InstagramIcon from '../assets/icons/InstagramIcon.astro';
-import RightIcon from '../assets/icons/RightIcon.astro';
-import LeftIcon from '../assets/icons/LeftIcon.astro';
+import ButtonSocialLink from './shared/ButtonSocialLink.astro';
+import InstagramIcon from '@/assets/icons/InstagramIcon.astro';
+import RightIcon from '@/assets/icons/RightIcon.astro';
+import LeftIcon from '@/assets/icons/LeftIcon.astro';
+
+import SwiperGallery from '@/components/shared/SwiperGallery.vue';
+
+const sliderImages = [
+  '/images/team/team_1.webp',
+  '/images/team/team_2.webp',
+  '/images/team/team_3.webp',
+  '/images/team/team_4.webp',
+  '/images/team/team_5.webp',
+  '/images/team/team_6.webp',
+  '/images/team/team_7.webp',
+  '/images/team/team_8.webp',
+  '/images/team/team_9.webp',
+  '/images/team/team_10.webp',
+];
 
 const { id } = Astro.props;
 ---
 
 <section id={id} class="bg-white text-black py-14 scroll-mt-10">
   <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row gap-16 md:px-8 px-4">
-    <div class="relative w-full max-w-md h-[25rem] md:h-[32rem] mx-auto overflow-hidden rounded-lg">
-      <div class="relative h-[25rem] md:h-[32rem] w-full max-w-md mx-auto">
-        <div id="slider" class="absolute inset-0 w-full h-full">
-          <img
-            src="/images/team/team_1.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 1"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_2.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 2"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_3.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 3"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_4.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 4"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_5.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 5"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_6.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 6"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_7.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 7"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_8.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 7"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_9.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 7"
-            loading="lazy"
-          />
-          <img
-            src="/images/team/team_10.webp"
-            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-500"
-            alt="Imagen 7"
-            loading="lazy"
-          />
-          <div class="bg-gray-200 absolute bottom-5 right-5 rounded-md overflow-hidden">
-            <div class="flex items-center">
-              <button
-                onclick="prevImage()"
-                class="md:p-2 p-3 cursor-pointer hover:bg-gray-300 active:bg-gray-300"
-              >
-                <LeftIcon />
-              </button>
-              <button
-                onclick="nextImage()"
-                class="md:p-2 p-3 cursor-pointer hover:bg-gray-300 active:bg-gray-300"
-              >
-                <RightIcon />
-              </button>
-            </div>
-          </div>
-        </div>
+    <div class="w-full max-w-md mx-auto">
+      <div class="w-full max-w-md mx-auto rounded-lg overflow-hidden">
+        <SwiperGallery client:only="vue" images={sliderImages} />
       </div>
     </div>
     <div class="flex-1">
