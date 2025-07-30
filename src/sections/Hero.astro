@@ -1,8 +1,8 @@
 ---
-import ButtonSocialLink from './shared/ButtonSocialLink.astro';
-import FacebooIcon from '../assets/icons/FacebookIcon.astro';
-import InstagramIcon from '../assets/icons/InstagramIcon.astro';
-import TikTokIcon from '../assets/icons/TikTokIcon.astro';
+import ButtonSocialLink from '@/components/ButtonSocialLink.astro';
+import FacebooIcon from '@/assets/icons/FacebookIcon.astro';
+import InstagramIcon from '@/assets/icons/InstagramIcon.astro';
+import TikTokIcon from '@/assets/icons/TikTokIcon.astro';
 
 const { id } = Astro.props;
 ---
@@ -53,7 +53,7 @@ const { id } = Astro.props;
     <picture class="lg:z-10 absolute lg:relative">
       <img
         src="/images/daniel_training.webp"
-        class="object-cover mask-x-from-80% mask-y-from-90% h-[500px] md:h-[600px] right-10 lg:right-32 bottom-0"
+        class="object-cover mask-x-from-80% mask-y-from-90% h-[500px] md:h-[600px] right-10 lg:right-32 bottom-0 select-none"
         alt="Foto de Daniel Kelly"
       />
     </picture>

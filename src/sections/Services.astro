@@ -1,6 +1,6 @@
 ---
-import ServicesContainer from './shared/ServicesContainer.astro';
-import ButtonSocialLink from './shared/ButtonSocialLink.astro';
+import ServicesCard from '@/components/ServicesCard.astro';
+import ButtonSocialLink from '@/components/ButtonSocialLink.astro';
 import FacebooIcon from '../assets/icons/FacebookIcon.astro';
 import InstagramIcon from '../assets/icons/InstagramIcon.astro';
 import WhatsappIcon from '../assets/icons/WhatsappIcon.astro';
@@ -58,41 +58,41 @@ const { id } = Astro.props;
       <div class="flex-1 min-h-[400px] md:min-h-[550px]">
         <div class="grid gap-4 lg:grid-cols-2 grid-cols-1 h-full">
           <div class="md:row-span-2">
-            <ServicesContainer
+            <ServicesCard
               title="Entrenamiento Personalizado"
               description="Plan de entrenamiento 100% adaptado a tus objetivos, condición física y estilo de vida. Incluye seguimiento, ajustes y asesoría continua."
             >
               <img
                 src="/images/gym.webp"
-                class="absolute w-full h-full top-0 left-0 object-cover"
+                class="absolute w-full h-full top-0 left-0 object-cover select-none"
                 alt="Gym"
               />
-            </ServicesContainer>
+            </ServicesCard>
           </div>
           <div class="md:row-span-1">
-            <ServicesContainer
+            <ServicesCard
               title="Asesoría Nutricional"
               description="Guía de hábitos alimenticios saludables para complementar tu entrenamiento. Aprenderás a comer mejor sin dietas extremas."
               span="row-span-2"
             >
               <img
                 src="/images/nutrition.webp"
-                class="absolute w-full h-full top-0 left-0 object-cover"
+                class="absolute w-full h-full top-0 left-0 object-cover select-none"
                 alt="Nutrición"
               />
-            </ServicesContainer>
+            </ServicesCard>
           </div>
           <div class="md:row-span-1">
-            <ServicesContainer
+            <ServicesCard
               title="Guía de Suplementos"
               description="Te ayudo a identificar cuáles suplementos realmente necesitas según tus objetivos, tipo de entrenamiento y estilo de vida."
             >
               <img
                 src="/images/supplements.webp"
-                class="absolute w-full h-full top-0 left-0 object-cover"
+                class="absolute w-full h-full top-0 left-0 object-cover select-none"
                 alt="Suplementos"
               />
-            </ServicesContainer>
+            </ServicesCard>
           </div>
         </div>
       </div>

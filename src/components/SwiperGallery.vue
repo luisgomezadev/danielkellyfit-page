@@ -1,6 +1,6 @@
 <template>
   <swiper
-    :modules="[Navigation, Pagination, Autoplay]"
+    :modules="[Navigation, Pagination]"
     :navigation="true"
     :pagination="{ clickable: true }"
     loop
@@ -11,7 +11,7 @@
         :src="img"
         :alt="`Slide ${i + 1}`"
         loading="lazy"
-        class="w-full h-auto object-cover aspect-square rounded-lg overflow-hidden"
+        class="w-full h-auto object-cover aspect-square rounded-lg overflow-hidden select-none"
       />
     </swiper-slide>
   </swiper>
@@ -19,7 +19,7 @@
 
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -65,8 +65,8 @@ defineProps({
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 1rem; /* Ajusta el tamaño del ícono de flecha aquí */
-  color: #FFF; /* O el color que prefieras */
+  font-size: 1rem;
+  color: #FFF;
 }
 
 @media (max-width: 768px) {
