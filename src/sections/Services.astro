@@ -11,7 +11,7 @@ const { id } = Astro.props;
 <section class="bg-gray-200 scroll-mt-10" id={id}>
   <div class="max-w-7xl mx-auto md:px-8 px-4 py-14">
     <div class="flex flex-col md:flex-row gap-16 h-full">
-      <div class="w-full md:w-80" data-aos="fade-right">
+      <div class="w-full md:w-80">
         <h2
           class="uppercase text-2xl md:text-4xl font-bold mb-4 text-gray-800 md:text-start text-center"
         >
@@ -57,7 +57,7 @@ const { id } = Astro.props;
       </div>
       <div class="flex-1 min-h-[400px] md:min-h-[550px]">
         <div class="grid gap-4 lg:grid-cols-2 grid-cols-1 h-full">
-          <div class="md:row-span-2" data-aos="fade-left" data-aos-delay="100">
+          <div class="md:row-span-2">
             <ServicesCard
               title="Entrenamiento Personalizado"
               description="Plan de entrenamiento 100% adaptado a tus objetivos, condición física y estilo de vida. Incluye seguimiento, ajustes y asesoría continua."
@@ -69,7 +69,7 @@ const { id } = Astro.props;
               />
             </ServicesCard>
           </div>
-          <div class="md:row-span-1" data-aos="fade-left" data-aos-delay="150">
+          <div class="md:row-span-1">
             <ServicesCard
               title="Asesoría Nutricional"
               description="Guía de hábitos alimenticios saludables para complementar tu entrenamiento. Aprenderás a comer mejor sin dietas extremas."
@@ -82,7 +82,7 @@ const { id } = Astro.props;
               />
             </ServicesCard>
           </div>
-          <div class="md:row-span-1" data-aos="fade-left" data-aos-delay="200">
+          <div class="md:row-span-1">
             <ServicesCard
               title="Guía de Suplementos"
               description="Te ayudo a identificar cuáles suplementos realmente necesitas según tus objetivos, tipo de entrenamiento y estilo de vida."
