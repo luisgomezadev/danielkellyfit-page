@@ -7,6 +7,7 @@ import Services from '@/sections/Services.astro';
 import Store from '@/sections/Store.astro';
 import Events from '@/sections/Events.astro';
 import Team from '@/sections/Team.astro';
+import 'aos/dist/aos.css';
 ---
 
 <Layout title="Daniel Kelly Fit | Entrenador Personal">
@@ -17,3 +18,14 @@ import Team from '@/sections/Team.astro';
   <Store id="tienda" />
   <Events id="eventos" />
 </Layout>
+
+<script>
+  import AOS from 'aos';
+
+  window.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  });
+</script>

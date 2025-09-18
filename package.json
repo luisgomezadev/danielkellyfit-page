@@ -11,11 +11,13 @@
   "dependencies": {
     "@astrojs/vue": "^5.1.0",
     "@tailwindcss/vite": "^4.1.10",
+    "aos": "^2.3.4",
     "astro": "^5.10.0",
     "swiper": "^11.2.10",
     "vue": "^3.5.18"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.10"
