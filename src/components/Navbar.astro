@@ -13,17 +13,29 @@ import CloseIcon from '@/assets/icons/CloseIcon.astro';
 
   (window as any).toggleMenu = function () {
     isOpen = !isOpen;
+
+    // menú móvil
     const menu = document.getElementById('mobileMenu');
     if (menu) {
-      menu.classList.toggle('translate-x-full');
-      menu.classList.toggle('translate-x-0');
+      menu.classList.toggle('max-h-0');
+      menu.classList.toggle('opacity-0');
+      menu.classList.toggle('max-h-screen');
+      menu.classList.toggle('opacity-100');
+    }
+
+    // iconos hamburguesa ↔ cerrar
+    const openIcon = document.getElementById('menuOpenIcon');
+    const closeIcon = document.getElementById('menuCloseIcon');
+    if (openIcon && closeIcon) {
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
     }
   };
 </script>
 
 <header class="fixed top-0 left-0 w-full bg-slate-100 shadow-md z-50 py-3">
-  <div class="max-w-7xl mx-auto px-3">
-    <div class="flex items-center justify-between h-12">
+  <div class="max-w-7xl mx-auto px-3 z-50">
+    <div class="flex items-center justify-between h-12 z-50">
       <a href="#inicio" aria-label="Inicio">
         <img
           src="/images/dk_logo_black_transparent.webp"
@@ -68,16 +80,22 @@ import CloseIcon from '@/assets/icons/CloseIcon.astro';
         </a>
       </nav>
 
-      <button onclick="toggleMenu()" class="md:hidden text-slate-800 mr-3">
-        <MenuIcon size="32" />
+      <!-- 🔹 Botón hamburguesa/cerrar -->
+      <button onclick="toggleMenu()" class="md:hidden text-slate-800 mr-3 flex items-center">
+        <span id="menuOpenIcon" class="transition-opacity duration-300">
+          <MenuIcon size="32" />
+        </span>
+        <span id="menuCloseIcon" class="hidden transition-opacity duration-300">
+          <CloseIcon size="32" />
+        </span>
       </button>
     </div>
 
+    <!-- 🔹 Menú móvil debajo del header -->
     <div
       id="mobileMenu"
-      class="fixed top-0 right-0 w-full h-screen bg-white/95 text-black flex flex-col items-center justify-center gap-8 text-2xl font-medium transform translate-x-full transition-transform duration-500 md:hidden z-40 backdrop-blur-3xl"
+      class="absolute top-full left-0 w-full bg-slate-100 text-slate-800 flex flex-col items-center justify-center gap-8 text-2xl font-medium transition-all duration-500 md:hidden z-20 backdrop-blur-3xl py-5 shadow-xl max-h-0 opacity-0 overflow-hidden"
     >
-      <button class="absolute top-6 right-6" onclick="toggleMenu()"><CloseIcon size="24" /></button>
       <a href="#perfil" onclick="toggleMenu()" class="flex items-center gap-1 text-gray-800">
         Perfil</a
       >
