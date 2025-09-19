@@ -14,56 +14,57 @@ const { id } = Astro.props;
   <div
     class="relative grid lg:grid-cols-2 gap-x-12 gap-y-24 items-center lg:min-h-screen max-w-7xl mx-auto md:px-8 px-4 pt-36 pb-12 lg:py-8"
   >
-    <header class="z-30 max-w-xl">
+    <header class="z-30 max-w-xl md:text-start text-center">
       <div>
         <h1 class="text-2xl md:text-5xl font-semibold mb-1">Hola, soy</h1>
         <h1 class="text-5xl md:text-6xl font-bold uppercase font-serif tracking-wide">
           Daniel Kelly
         </h1>
         <h2 class="text-xl md:text-2xl mb-4 text-green-600">Entrenador Personal</h2>
-        <p class="text-base md:text-lg opacity-80 text-pretty text-start">
+        <p class="text-base md:text-lg opacity-80 text-pretty md:text-start">
           Te guío en tu transformación física y mental con planes de entrenamiento y nutrición
           personalizados, pensados para que avances de forma segura y consigas resultados reales.
         </p>
 
-        <p class="text-sm md:text-base text-pretty italic mt-2 text-green-800 text-start">
+        <p class="text-sm md:text-base text-pretty italic mt-2 text-green-800 md:text-start">
           - Si vas al gimnasio y no sabes que hacer y tampoco como alimentarte, pues yo te ayudo.
         </p>
       </div>
-      <div class="flex gap-4 mt-6 justify-start items-center">
-        <p class="font-semibold">Sígueme por:</p>
+      <div class="flex gap-4 mt-6 justify-center md:justify-start items-center">
+        <p class="font-semibold hidden md:block">Sígueme por:</p>
         <ButtonSocialLink
           title="Facebook"
           href="https://www.facebook.com/profile.php?id=100087054653965"
-          className="hover:text-blue-800 text-black"
+          bg="md:bg-white bg-green-600"
+          className="hover:text-green-700 text-white md:text-black md:hover:text-blue-800"
         >
           <FacebooIcon />
         </ButtonSocialLink>
         <ButtonSocialLink
           title="Instagram"
           href="https://www.instagram.com/danielkelly_fit/"
-          className="hover:text-[#9C3594] text-black"
+          bg="md:bg-white bg-green-600"
+          className="hover:text-green-700 text-white md:text-black md:hover:text-[#9C7594]"
         >
           <InstagramIcon />
         </ButtonSocialLink>
         <ButtonSocialLink
           title="Tik Tok"
           href="https://www.tiktok.com/@danielkellys?lang=es-419"
-          className="text-black"
+          bg="md:bg-white bg-green-600"
+          className="hover:text-green-700 text-white md:text-black md:hover:text-black"
         >
           <TikTokIcon />
         </ButtonSocialLink>
       </div>
     </header>
-    <picture
-      class="lg:z-10 absolute lg:relative flex items-center justify-center"
-    >
+    <picture class="lg:z-10 absolute bottom-0 right-0 flex items-center justify-center">
       <img
-        src="/images/daniel_training.webp"
-        class="object-cover mask-x-from-70% mask-y-from-90% h-[500px] md:h-[500px] right-10 lg:right-12 bottom-0 select-none"
+        src="/images/daniel_hero.webp"
+        class="object-cover md:h-[660px] right-10 lg:right-12 bottom-0 select-none"
         alt="Foto de Daniel Kelly"
       />
     </picture>
   </div>
-  <div class="absolute w-full h-full top-0 left-0 z-20 bg-white/90 md:bg-white/20"></div>
+  <div class="absolute w-full h-full top-0 left-0 z-20 bg-white/90 md:bg-white/5"></div>
 </section>
