@@ -8,93 +8,54 @@ import WhatsappIcon from '../assets/icons/WhatsappIcon.astro';
 const { id } = Astro.props;
 ---
 
-<section class="bg-gray-200 scroll-mt-10" id={id}>
-  <div class="max-w-7xl mx-auto md:px-8 px-4 py-14">
-    <div class="flex flex-col md:flex-row gap-16 h-full">
-      <div class="w-full md:w-80">
-        <h2
-          class="uppercase text-2xl md:text-4xl font-bold mb-4 text-gray-800 md:text-start text-center"
+<section class="bg-primary/80 scroll-mt-16 py-14 md:py-20" id={id}>
+  <div class="max-w-7xl mx-auto md:px-8 px-4">
+    <h2 class="uppercase text-2xl md:text-4xl font-bold text-black text-center mb-4">
+      Mis servicios
+    </h2>
+    <p class="text-black mb-6 max-w-3xl mx-auto text-center">
+      Como entrenador personal, ofrezco programas personalizados enfocados en resultados reales,
+      sostenibles y adaptados a tus necesidades. Ya sea que entrenes en casa, en el gimnasio o de
+      forma online, tengo un plan para ti. Para más información o consultas, puedes contactarme a
+      través de mis redes sociales. Estaré encantado de ayudarte.
+    </p>
+    <div class="grid gap-4 lg:grid-cols-3 grid-cols-1 min-h-[250px]">
+      <div>
+        <ServicesCard
+          title="Entrenamiento Personalizado"
+          description="Plan de entrenamiento 100% adaptado a tus objetivos, condición física y estilo de vida. Incluye seguimiento, ajustes y asesoría continua."
         >
-          Mis Servicios
-        </h2>
-        <div class="leading-relaxed">
-          <p class="mb-7 opacity-70">
-            Como entrenador personal, ofrezco programas personalizados enfocados en resultados
-            reales, sostenibles y adaptados a tus necesidades. Ya sea que entrenes en casa, en el
-            gimnasio o de forma online, tengo un plan para ti.
-          </p>
-          <p>
-            Para más información o consultas, puedes contactarme a través de mis redes sociales.
-            Estaré encantado de ayudarte.
-          </p>
-        </div>
-        <div class="flex gap-4 mt-6">
-          <ButtonSocialLink
-            title="Facebook"
-            href="https://www.facebook.com/profile.php?id=100087054653965"
-            bg="md:bg-white bg-green-600"
-            className="hover:text-blue-800 text-white md:text-black"
-          >
-            <FacebooIcon />
-          </ButtonSocialLink>
-          <ButtonSocialLink
-            title="Instagram"
-            href="https://www.instagram.com/danielkelly_fit/"
-            bg="md:bg-white bg-green-600"
-            className="hover:text-[#9C3594] text-white md:text-black"
-          >
-            <InstagramIcon />
-          </ButtonSocialLink>
-          <ButtonSocialLink
-            title="Whatsapp"
-            href="https://wa.me/573022071208"
-            bg="md:bg-white bg-green-600"
-            className="hover:text-green-700 text-white md:text-black"
-          >
-            <WhatsappIcon />
-          </ButtonSocialLink>
-        </div>
+          <img
+            src="/images/gym.webp"
+            class="absolute w-full h-full top-0 left-0 object-cover select-none"
+            alt="Gym"
+          />
+        </ServicesCard>
       </div>
-      <div class="flex-1 min-h-[400px] md:min-h-[550px]">
-        <div class="grid gap-4 lg:grid-cols-2 grid-cols-1 h-full">
-          <div class="md:row-span-2">
-            <ServicesCard
-              title="Entrenamiento Personalizado"
-              description="Plan de entrenamiento 100% adaptado a tus objetivos, condición física y estilo de vida. Incluye seguimiento, ajustes y asesoría continua."
-            >
-              <img
-                src="/images/gym.webp"
-                class="absolute w-full h-full top-0 left-0 object-cover select-none"
-                alt="Gym"
-              />
-            </ServicesCard>
-          </div>
-          <div class="md:row-span-1">
-            <ServicesCard
-              title="Asesoría Nutricional"
-              description="Guía de hábitos alimenticios saludables para complementar tu entrenamiento. Aprenderás a comer mejor sin dietas extremas."
-              span="row-span-2"
-            >
-              <img
-                src="/images/nutrition.webp"
-                class="absolute w-full h-full top-0 left-0 object-cover select-none"
-                alt="Nutrición"
-              />
-            </ServicesCard>
-          </div>
-          <div class="md:row-span-1">
-            <ServicesCard
-              title="Guía de Suplementos"
-              description="Te ayudo a identificar cuáles suplementos realmente necesitas según tus objetivos, tipo de entrenamiento y estilo de vida."
-            >
-              <img
-                src="/images/supplements.webp"
-                class="absolute w-full h-full top-0 left-0 object-cover select-none"
-                alt="Suplementos"
-              />
-            </ServicesCard>
-          </div>
-        </div>
+      <div>
+        <ServicesCard
+          title="Asesoría Nutricional"
+          description="Guía de hábitos alimenticios saludables para complementar tu entrenamiento. Aprenderás a comer mejor sin dietas extremas."
+          span="row-span-2"
+        >
+          <img
+            src="/images/nutrition.webp"
+            class="absolute w-full h-full top-0 left-0 object-cover select-none"
+            alt="Nutrición"
+          />
+        </ServicesCard>
+      </div>
+      <div>
+        <ServicesCard
+          title="Guía de Suplementos"
+          description="Te ayudo a identificar cuáles suplementos realmente necesitas según tus objetivos, tipo de entrenamiento y estilo de vida."
+        >
+          <img
+            src="/images/supplements.webp"
+            class="absolute w-full h-full top-0 left-0 object-cover select-none"
+            alt="Suplementos"
+          />
+        </ServicesCard>
       </div>
     </div>
   </div>

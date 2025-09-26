@@ -43,7 +43,7 @@ defineProps({
   opacity: 1;
 }
 .swiper-pagination-bullet-active {
-  background-color: #00bf63 !important;
+  background-color: theme('colors.primary') !important;
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -60,7 +60,7 @@ defineProps({
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: rgba(0, 191, 99, 0.1);
+  background-color: rgba(0, 255, 34, 0.1);
 }
 
 .swiper-button-next::after,

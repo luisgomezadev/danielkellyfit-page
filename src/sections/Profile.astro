@@ -2,9 +2,9 @@
 const { id } = Astro.props;
 ---
 
-<section class="bg-white text-black py-16 scroll-mt-10" id={id}>
+<section class="bg-[#111] text-white py-14 md:py-20 scroll-mt-10" id={id}>
   <div class="max-w-7xl mx-auto md:px-8 px-4 flex flex-col md:flex-row items-center gap-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div class="grid-cols-1 md:grid-cols-2 gap-3 hidden md:grid">
       <picture class="row-span-2 w-56 flex items-center">
         <img
           src="/images/daniel_running.webp"
@@ -12,14 +12,14 @@ const { id } = Astro.props;
           class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105 select-none"
         />
       </picture>
-      <picture class="w-56 hidden md:block">
+      <picture class="w-56">
         <img
           src="/images/daniel_perfil.webp"
           alt="Daniel haciendo running"
           class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105 select-none"
         />
       </picture>
-      <picture class="w-56 hidden md:block">
+      <picture class="w-56">
         <img
           src="/images/daniel_perfil_2.webp"
           alt="Daniel haciendo running"
@@ -30,11 +30,11 @@ const { id } = Astro.props;
 
     <div class="flex-1">
       <h2
-        class="uppercase text-2xl md:text-4xl font-bold mb-4 text-gray-800 md:text-start text-center"
+        class="uppercase text-2xl md:text-4xl font-bold mb-4 text-slate-100 md:text-start text-center"
       >
         Mi Perfil
       </h2>
-      <div class="text-gray-700 leading-relaxed space-y-4">
+      <div class="text-slate-300 leading-relaxed space-y-4">
         <p class="text-pretty">
           Mi nombre es Daniel Kelly Salcedo, soy entrenador personal certificado con 5 años de
           experiencia ayudando a personas a transformar su estilo de vida a través del ejercicio, la
@@ -50,7 +50,7 @@ const { id } = Astro.props;
           el proceso mientras lo haces.
         </p>
       </div>
-      <p class="mt-6 text-green-700 font-medium italic">
+      <p class="mt-6 text-primary italic">
         “Entrena por salud, continúa por pasión, y quédate por los resultados.”
       </p>
     </div>

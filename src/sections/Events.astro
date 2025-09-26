@@ -2,28 +2,30 @@
 const { id } = Astro.props;
 ---
 
-<section class="bg-white scroll-mt-10 text-black" id={id}>
-  <div class="max-w-7xl mx-auto md:px-8 px-4 py-14">
+<section class="bg-[#111] scroll-mt-10 text-slate-100 py-14 md:py-20" id={id}>
+  <div class="max-w-7xl mx-auto md:px-8 px-4">
     <div class="flex flex-col md:flex-row gap-14 h-full">
       <div class="w-full md:w-[1000px]">
         <h2
-          class="uppercase text-2xl md:text-4xl font-bold mb-4 text-gray-800 md:text-start text-center"
+          class="uppercase text-2xl md:text-4xl font-bold mb-4 text-slate-100 md:text-start text-center"
         >
           Mis Eventos
         </h2>
         <div class="">
-          <h2 class="text-lg md:text-xl font-bold text-gray-800 mb-4">
-            ⭐ Workout on The Beach – Edición #5
+          <h2 class="text-lg md:text-xl font-bold text-slate-100 mb-4">
+            Workout on The Beach – Edición #5
           </h2>
-          <p class="mb-6 text-gray-700 leading-relaxed text-pretty">
+          <p class="mb-6 text-slate-300 leading-relaxed text-pretty">
             El pasado <strong>23 de marzo de 2025</strong> vivimos la quinta edición de Workout on The
             Beach, un evento único que combina entrenamiento, energía y comunidad en un escenario natural
             inigualable:<strong> la playa.</strong>
           </p>
 
-          <div class="bg-gray-200 rounded-lg shadow-md p-6 max-w-xl mx-auto mb-10">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">¿Qué incluyó esta edición?</h3>
-            <ul class="text-gray-800 space-y-2 text-left">
+          <div
+            class="bg-primary/5 border border-primary rounded-lg shadow-md p-6 max-w-xl mb-10"
+          >
+            <h3 class="text-xl font-semibold text-slate-100 mb-4">¿Qué incluyó esta edición?</h3>
+            <ul class="text-slate-200 space-y-2 text-left">
               <li>✅ Entrenamiento funcional grupal en la playa</li>
               <li>✅ Desayuno saludable post-entreno</li>
               <li>✅ Hidratación para mantener el rendimiento</li>
@@ -31,9 +33,8 @@ const { id } = Astro.props;
             </ul>
           </div>
 
-          <p class="font-medium text-gray-700">
-            📲 <span class="text-green-800 font-semibold">¡No te pierdas la próxima edición!</span
-            ><br />
+          <p class="font-medium text-slate-300">
+            <span class="text-primary font-semibold">¡No te pierdas la próxima edición!</span><br />
             Sígueme en mis redes sociales y mantente pendiente de la fecha del próximo <strong
               >Workout on The Beach</strong
             >.

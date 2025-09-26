@@ -1,9 +1,4 @@
 ---
-import ProfileIcon from '@/assets/icons/ProfileIcon.astro';
-import ServicesIcon from '@/assets/icons/ServicesIcon.astro';
-import StoreIcon from '@/assets/icons/StoreIcon.astro';
-import EventsIcon from '@/assets/icons/EventsIcon.astro';
-import TransformIcon from '@/assets/icons/TransformIcon.astro';
 import MenuIcon from '@/assets/icons/MenuIcon.astro';
 import CloseIcon from '@/assets/icons/CloseIcon.astro';
 ---
@@ -31,14 +26,57 @@ import CloseIcon from '@/assets/icons/CloseIcon.astro';
       closeIcon.classList.toggle('hidden');
     }
   };
+
+  // 🔹 Navbar fondo + blur al hacer scroll
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('mainHeader');
+    if (window.scrollY > 50) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  });
 </script>
 
-<header class="fixed top-0 left-0 w-full bg-slate-100 shadow-md z-50 py-3">
+<style>
+  header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  nav a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: theme('colors.primary');
+    transition: width 0.3s ease-in-out;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+</style>
+
+<header
+  id="mainHeader"
+  class="fixed top-0 left-0 w-full bg-transparent z-50 py-3 transition-all duration-300"
+>
   <div class="max-w-7xl mx-auto px-3 z-50">
     <div class="flex items-center justify-between h-12 z-50">
       <a href="#inicio" aria-label="Inicio">
         <img
-          src="/images/dk_logo_black_transparent.webp"
+          src="/images/dk_logo_transparent.webp"
           class="w-12 hidden md:block"
           alt="Logo Daniel Kelly Fit"
         />
@@ -47,41 +85,16 @@ import CloseIcon from '@/assets/icons/CloseIcon.astro';
         </div>
       </a>
 
-      <nav class="hidden md:flex gap-x-6 md:gap-x-12">
-        <a
-          href="#perfil"
-          class="flex items-center gap-1 text-slate-800 hover:text-green-600 transition"
-        >
-          Perfil
-        </a>
-        <a
-          href="#servicios"
-          class="flex items-center gap-1 text-slate-800 hover:text-green-600 transition"
-        >
-          Servicios
-        </a>
-        <a
-          href="#team"
-          class="flex items-center gap-1 text-slate-800 hover:text-green-600 transition"
-        >
-          Team
-        </a>
-        <a
-          href="#tienda"
-          class="flex items-center gap-1 text-slate-800 hover:text-green-600 transition"
-        >
-          Tienda
-        </a>
-        <a
-          href="#eventos"
-          class="flex items-center gap-1 text-slate-800 hover:text-green-600 transition"
-        >
-          Eventos
-        </a>
+      <nav class="hidden md:flex gap-x-6 md:gap-x-12 text-lg">
+        <a href="#perfil" class="flex items-center gap-1"> Perfil </a>
+        <a href="#team" class="flex items-center gap-1"> Team </a>
+        <a href="#servicios" class="flex items-center gap-1"> Servicios </a>
+        <a href="#tienda" class="flex items-center gap-1"> Tienda </a>
+        <a href="#eventos" class="flex items-center gap-1"> Eventos </a>
       </nav>
 
       <!-- 🔹 Botón hamburguesa/cerrar -->
-      <button onclick="toggleMenu()" class="md:hidden text-slate-800 mr-3 flex items-center">
+      <button onclick="toggleMenu()" class="md:hidden text-slate-100 mr-3 flex items-center">
         <span id="menuOpenIcon" class="transition-opacity duration-300">
           <MenuIcon size="32" />
         </span>
@@ -94,19 +107,19 @@ import CloseIcon from '@/assets/icons/CloseIcon.astro';
     <!-- 🔹 Menú móvil debajo del header -->
     <div
       id="mobileMenu"
-      class="absolute top-full left-0 w-full bg-slate-100 text-slate-800 flex flex-col items-center justify-center gap-8 text-2xl font-medium transition-all duration-500 md:hidden z-20 backdrop-blur-3xl py-5 shadow-xl max-h-0 opacity-0 overflow-hidden"
+      class="absolute top-full left-0 w-full bg-black text-slate-200 flex flex-col justify-center gap-8 text-2xl font-medium transition-all duration-500 md:hidden z-20 backdrop-blur-3xl py-5 shadow-xl max-h-0 opacity-0 overflow-hidden px-3"
     >
-      <a href="#perfil" onclick="toggleMenu()" class="flex items-center gap-1 text-gray-800">
+      <a href="#perfil" onclick="toggleMenu()" class="flex items-center gap-1">
         Perfil</a
       >
-      <a href="#servicios" onclick="toggleMenu()" class="flex items-center gap-1 text-gray-800"
+      <a href="#servicios" onclick="toggleMenu()" class="flex items-center gap-1"
         >Servicios</a
       >
-      <a href="#team" onclick="toggleMenu()" class="flex items-center gap-1 text-gray-800">Team</a>
-      <a href="#tienda" onclick="toggleMenu()" class="flex items-center gap-1 text-gray-800"
+      <a href="#team" onclick="toggleMenu()" class="flex items-center gap-1">Team</a>
+      <a href="#tienda" onclick="toggleMenu()" class="flex items-center gap-1"
         >Tienda</a
       >
-      <a href="#eventos" onclick="toggleMenu()" class="flex items-center gap-1 text-gray-800"
+      <a href="#eventos" onclick="toggleMenu()" class="flex items-center gap-1"
         >Eventos</a
       >
     </div>
