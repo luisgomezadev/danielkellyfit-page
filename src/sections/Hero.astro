@@ -11,22 +11,22 @@ const { id } = Astro.props;
   <div
     class="relative grid lg:grid-cols-2 gap-x-12 gap-y-24 items-center lg:min-h-screen max-w-7xl mx-auto md:px-3 px-4 pt-36 pb-12 lg:py-8"
   >
-    <header class="z-30 max-w-xl md:text-start text-center">
+    <header class="z-30 max-w-xl mx-auto lg:text-start text-center">
       <div>
         <h1 class="text-5xl md:text-6xl font-bold tracking-wide mb-3">
           Entrenador Personal & Creador de Contenido
         </h1>
-        <p class="text-base md:text-lg opacity-80 text-pretty md:text-start">
+        <p class="text-base md:text-lg opacity-80 text-pretty lg:text-start">
           Te guío en tu transformación física y mental con planes de entrenamiento y nutrición
           personalizados, pensados para que avances de forma segura y consigas resultados reales.
         </p>
 
-        <p class="text-sm md:text-base text-pretty italic mt-2 text-primary md:text-start">
+        <p class="text-sm md:text-base text-pretty italic mt-2 text-primary lg:text-start">
           - Si vas al gimnasio y no sabes que hacer y tampoco como alimentarte, pues yo te ayudo.
         </p>
       </div>
-      <div class="flex gap-4 mt-6 justify-center md:justify-start items-center">
-        <p class="font-semibold hidden md:block">Sígueme por:</p>
+      <div class="flex gap-4 mt-6 justify-center lg:justify-start items-center">
+        <p class="font-semibold hidden lg:block">Sígueme por:</p>
         <ButtonSocialLink
           title="Facebook"
           href="https://www.facebook.com/profile.php?id=100087054653965"
@@ -53,10 +53,12 @@ const { id } = Astro.props;
         </ButtonSocialLink>
       </div>
     </header>
-    <div class="lg:z-10 absolute bottom-0 right-12 lg:right-20 flex items-center justify-center">
+    <div
+      class="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center lg:right-20 lg:left-auto lg:translate-x-0 lg:z-10"
+    >
       <img
         src="/images/daniel_hero.webp"
-        class="object-cover h-[500px] md:h-[400px] xl:h-[600px] 2xl:h-[700px] right-12 bottom-0 select-none z-10"
+        class="object-cover h-[600px] md:h-[570px] xl:h-[680px] 2xl:h-[700px] right-12 bottom-0 select-none z-10"
         alt="Foto de Daniel Kelly"
       />
       <svg
@@ -71,5 +73,5 @@ const { id } = Astro.props;
       </svg>
     </div>
   </div>
-  <div class="absolute w-full h-full top-0 left-0 z-20 bg-black/90 md:bg-white/5"></div>
+  <div class="absolute w-full h-full top-0 left-0 z-20 bg-black/90 lg:bg-white/5"></div>
 </section>
