@@ -1,4 +1,6 @@
 ---
+import CheckIcon from '@/assets/icons/CheckIcon.astro';
+
 const { id } = Astro.props;
 ---
 
@@ -22,14 +24,20 @@ const { id } = Astro.props;
           </p>
 
           <div
-            class="bg-primary/5 border border-primary rounded-lg shadow-md p-6 max-w-xl mb-10"
+            class="bg-primary/5 border border-primary/20 rounded-lg shadow-md p-6 max-w-xl mb-10"
           >
             <h3 class="text-xl font-semibold text-slate-100 mb-4">¿Qué incluyó esta edición?</h3>
             <ul class="text-slate-200 space-y-2 text-left">
-              <li>✅ Entrenamiento funcional grupal en la playa</li>
-              <li>✅ Desayuno saludable post-entreno</li>
-              <li>✅ Hidratación para mantener el rendimiento</li>
-              <li>✅ Desafíos y premios para los participantes</li>
+              <li class="flex items-center gap-2">
+                <CheckIcon /> Entrenamiento funcional grupal en la playa
+              </li>
+              <li class="flex items-center gap-2"><CheckIcon /> Desayuno saludable post-entreno</li>
+              <li class="flex items-center gap-2">
+                <CheckIcon /> Hidratación para mantener el rendimiento
+              </li>
+              <li class="flex items-center gap-2">
+                <CheckIcon /> Desafíos y premios para los participantes
+              </li>
             </ul>
           </div>
 

@@ -5,10 +5,21 @@ const { title, description } = Astro.props;
 <div
   class="rounded-lg relative p-5 overflow-hidden h-full min-h-52 group transition-transform duration-300 hover:scale-[1.01]"
 >
-  <div class="absolute bottom-6 left-0 z-10 text-white px-5">
+  <!-- Texto -->
+  <div class="absolute bottom-6 left-0 z-20 text-white px-5">
     <h2 class="text-xl md:text-2xl font-semibold mb-1">{title}</h2>
     <p class="text-sm md:text-base leading-snug">{description}</p>
   </div>
+
+  <!-- Imagen o contenido dinámico -->
   <slot />
-  <div class="absolute w-full h-full top-0 left-0 bg-black/70"></div>
+
+  <!-- Capa principal semitransparente -->
+  <div class="absolute w-full h-full top-0 left-0 bg-primary/20 z-10"></div>
+
+  <!-- Difuminado negro más suave y extendido -->
+  <div
+    class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/100 via-black/90 to-transparent z-10"
+  >
+  </div>
 </div>

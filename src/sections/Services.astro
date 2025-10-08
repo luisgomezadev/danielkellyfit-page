@@ -1,25 +1,13 @@
 ---
 import ServicesCard from '@/components/ServicesCard.astro';
-import ButtonSocialLink from '@/components/ButtonSocialLink.astro';
-import FacebooIcon from '../assets/icons/FacebookIcon.astro';
-import InstagramIcon from '../assets/icons/InstagramIcon.astro';
-import WhatsappIcon from '../assets/icons/WhatsappIcon.astro';
 
 const { id } = Astro.props;
 ---
 
-<section class="bg-primary/90 scroll-mt-16 py-14 md:py-20" id={id}>
+<section class="bg-[#111] scroll-mt-10 py-20 md:py-32 text-white" id={id}>
   <div class="max-w-7xl mx-auto md:px-8 px-4">
-    <h2 class="uppercase text-2xl md:text-4xl font-bold text-black text-center mb-4">
-      Mis servicios
-    </h2>
-    <p class="text-black mb-6 max-w-3xl mx-auto text-center">
-      Como entrenador personal, ofrezco programas personalizados enfocados en resultados reales,
-      sostenibles y adaptados a tus necesidades. Ya sea que entrenes en casa, en el gimnasio o de
-      forma online, tengo un plan para ti. Para más información o consultas, puedes contactarme a
-      través de mis redes sociales. Estaré encantado de ayudarte.
-    </p>
-    <div class="grid gap-4 lg:grid-cols-3 grid-cols-1 min-h-[250px]">
+    <h2 class="uppercase text-2xl md:text-4xl font-bold text-center mb-12">Mis servicios</h2>
+    <div class="grid gap-8 lg:grid-cols-3 grid-cols-1 min-h-[300px]">
       <div>
         <ServicesCard
           title="Entrenamiento Personalizado"
