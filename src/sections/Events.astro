@@ -4,102 +4,101 @@ import CheckIcon from '@/assets/icons/CheckIcon.astro';
 const { id } = Astro.props;
 ---
 
-<section class="bg-[#111] scroll-mt-10 text-slate-100 py-14 lg:py-20" id={id}>
-  <div class="max-w-7xl mx-auto lg:px-8 px-4">
-    <div class="flex flex-col lg:flex-row gap-14 h-full">
-      <div class="w-full lg:w-[1000px]">
-        <h2
-          class="uppercase text-2xl lg:text-4xl font-bold mb-4 text-slate-100 lg:text-start text-center"
-        >
-          Mis Eventos
-        </h2>
-        <div class="">
-          <h2 class="text-lg lg:text-xl font-bold text-slate-100 mb-4">
-            Workout on The Beach – Edición #5
-          </h2>
-          <p class="mb-6 text-slate-300 leading-relaxed text-pretty">
-            El pasado <strong>23 de marzo de 2025</strong> vivimos la quinta edición de Workout on The
-            Beach, un evento único que combina entrenamiento, energía y comunidad en un escenario natural
-            inigualable:<strong> la playa.</strong>
-          </p>
+<section
+  id={id}
+  class="scroll-mt-20 bg-[#111] py-16 lg:py-24 text-white"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-16"
+  >
+    <!-- Información -->
+    <div class="flex-1 max-w-2xl">
 
-          <div
-            class="bg-primary/5 border border-primary/20 rounded-lg shadow-md p-6 max-w-xl mb-10"
-          >
-            <h3 class="text-xl font-semibold text-slate-100 mb-4">¿Qué incluyó esta edición?</h3>
-            <ul class="text-slate-200 space-y-2 text-left">
-              <li class="flex items-center gap-2">
-                <CheckIcon /> Entrenamiento funcional grupal en la playa
-              </li>
-              <li class="flex items-center gap-2"><CheckIcon /> Desayuno saludable post-entreno</li>
-              <li class="flex items-center gap-2">
-                <CheckIcon /> Hidratación para mantener el rendimiento
-              </li>
-              <li class="flex items-center gap-2">
-                <CheckIcon /> Desafíos y premios para los participantes
-              </li>
-            </ul>
-          </div>
-
-          <p class="font-medium text-slate-300">
-            <span class="text-primary font-semibold">¡No te pierdas la próxima edición!</span><br />
-            Sígueme en mis redes sociales y mantente pendiente de la fecha del próximo <strong
-              >Workout on The Beach</strong
-            >.
-          </p>
-        </div>
-      </div>
-      <div
-        class="relative w-full max-w-md aspect-[4/5] mx-auto overflow-hidden rounded-lg shadow-lg"
+      <span
+        class="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
       >
-        <div class="relative aspect-[4/5] w-full max-w-md mx-auto">
-          <div id="slider_events" class="absolute inset-0 w-full h-full">
-            <img
-              src="/images/wotb/1.webp"
-              class="w-full h-full object-cover absolute opacity-0 transition-opacity select-none duration-1000"
-              alt="Imagen 1"
-              loading="lazy"
-            />
-            <img
-              src="/images/wotb/2.webp"
-              class="w-full h-full object-cover absolute opacity-0 transition-opacity select-none duration-1000"
-              alt="Imagen 2"
-              loading="lazy"
-            />
-            <img
-              src="/images/wotb/3.webp"
-              class="w-full h-full object-cover absolute opacity-0 transition-opacity select-none duration-1000"
-              alt="Imagen 3"
-              loading="lazy"
-            />
-            <img
-              src="/images/wotb/4.webp"
-              class="w-full h-full object-cover absolute opacity-0 transition-opacity select-none duration-1000"
-              alt="Imagen 4"
-              loading="lazy"
-            />
-            <img
-              src="/images/wotb/5.webp"
-              class="w-full h-full object-cover absolute opacity-0 transition-opacity select-none duration-1000"
-              alt="Imagen 5"
-              loading="lazy"
-            />
-            <img
-              src="/images/wotb/6.webp"
-              class="w-full h-full object-cover absolute opacity-0 transition-opacity select-none duration-1000"
-              alt="Imagen 6"
-              loading="lazy"
-            />
-            <img
-              src="/images/wotb/7.webp"
-              class="w-full h-full object-cover absolute opacity-0 transition-opacity select-none duration-1000"
-              alt="Imagen 7"
-              loading="lazy"
-            />
-          </div>
-        </div>
+        Comunidad Fitness
+      </span>
+
+      <h2 class="mt-5 text-4xl font-extrabold">
+        Workout on The Beach
+      </h2>
+
+      <p class="mt-2 text-primary font-medium">
+        Edición #5 · 23 de marzo de 2025
+      </p>
+
+      <p class="mt-6 text-lg leading-8 text-gray-300">
+        Un evento diseñado para entrenar, compartir y disfrutar de una
+        experiencia diferente al aire libre. Más que un entrenamiento, es una
+        oportunidad para conectar con personas que buscan un estilo de vida
+        saludable.
+      </p>
+
+      <div
+        class="mt-10 rounded-2xl border border-white/10 bg-zinc-900 p-6"
+      >
+        <h3 class="text-xl font-semibold">
+          ¿Qué incluye?
+        </h3>
+
+        <ul class="mt-5 space-y-4">
+
+          <li class="flex gap-3">
+            <CheckIcon />
+            Entrenamiento funcional en la playa.
+          </li>
+
+          <li class="flex gap-3">
+            <CheckIcon />
+            Desayuno saludable.
+          </li>
+
+          <li class="flex gap-3">
+            <CheckIcon />
+            Hidratación durante la jornada.
+          </li>
+
+          <li class="flex gap-3">
+            <CheckIcon />
+            Retos, premios y actividades.
+          </li>
+
+        </ul>
+      </div>
+
+      <blockquote
+        class="mt-8 border-l-4 border-primary pl-5 italic text-gray-200"
+      >
+        ¿Quieres participar en la próxima edición? Sígueme en mis redes sociales
+        y mantente atento a las próximas fechas.
+      </blockquote>
+
+    </div>
+
+    <!-- Slider -->
+    <div
+      class="relative w-full max-w-md aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 shadow-2xl"
+    >
+      <div id="slider_events" class="absolute inset-0">
+
+        <img src="/images/wotb/1.webp" class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000" loading="lazy" alt="Workout on The Beach 1"/>
+
+        <img src="/images/wotb/2.webp" class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000" loading="lazy" alt="Workout on The Beach 2"/>
+
+        <img src="/images/wotb/3.webp" class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000" loading="lazy" alt="Workout on The Beach 3"/>
+
+        <img src="/images/wotb/4.webp" class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000" loading="lazy" alt="Workout on The Beach 4"/>
+
+        <img src="/images/wotb/5.webp" class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000" loading="lazy" alt="Workout on The Beach 5"/>
+
+        <img src="/images/wotb/6.webp" class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000" loading="lazy" alt="Workout on The Beach 6"/>
+
+        <img src="/images/wotb/7.webp" class="absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000" loading="lazy" alt="Workout on The Beach 7"/>
+
       </div>
     </div>
+
   </div>
 </section>
 

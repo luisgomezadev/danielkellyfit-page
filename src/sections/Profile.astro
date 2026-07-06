@@ -1,58 +1,103 @@
 ---
+import CheckIcon from '@/assets/icons/CheckIcon.astro';
+
 const { id } = Astro.props;
 ---
 
-<section class="bg-[#111] text-white py-14 lg:py-20 scroll-mt-10" id={id}>
-  <div class="max-w-7xl mx-auto lg:px-8 px-4 flex flex-col-reverse lg:flex-row items-center gap-16">
-    <div class="grid-cols-1 lg:grid-cols-2 gap-3 grid">
-      <picture class="row-span-2 w-56 flex items-center">
+<section
+  id={id}
+  class="scroll-mt-12 bg-[#111] py-16 lg:py-24 text-white"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-16"
+  >
+    <!-- Galería -->
+    <div class="grid grid-cols-2 gap-4 lg:w-1/2 max-w-2xl">
+      <picture class="lg:row-span-2">
         <img
           src="/images/daniel_running.webp"
-          alt="Daniel haciendo running"
-          class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105 select-none"
+          alt="Daniel Kelly entrenando"
+          class="h-full w-full rounded-2xl object-cover shadow-xl transition duration-300 hover:scale-[1.03] select-none"
         />
       </picture>
-      <picture class="w-56 hidden lg:block">
+
+      <picture class="">
         <img
           src="/images/daniel_perfil.webp"
-          alt="Daniel haciendo running"
-          class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105 select-none"
+          alt="Daniel Kelly"
+          class="rounded-2xl object-cover shadow-xl transition duration-300 hover:scale-[1.03] select-none"
         />
       </picture>
-      <picture class="w-56 hidden lg:block">
+
+      <picture class="hidden lg:block">
         <img
           src="/images/daniel_perfil_2.webp"
-          alt="Daniel haciendo running"
-          class="rounded-md shadow-lg transition-transform duration-300 hover:scale-105 select-none"
+          alt="Daniel Kelly"
+          class="rounded-2xl object-cover shadow-xl transition duration-300 hover:scale-[1.03] select-none"
         />
       </picture>
     </div>
 
-    <div class="flex-1">
-      <h2
-        class="uppercase text-2xl lg:text-4xl font-bold mb-4 text-slate-100 lg:text-start text-center"
+    <!-- Información -->
+    <div class="flex-1 max-w-2xl">
+      <span
+        class="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
       >
-        Mi Perfil
+        Conóceme
+      </span>
+
+      <h2
+        class="mt-5 text-4xl font-extrabold text-left"
+      >
+        Soy Daniel Kelly
       </h2>
-      <div class="text-slate-300 leading-relaxed space-y-4">
-        <p>
-          Mi nombre es Daniel Kelly Salcedo, soy entrenador personal certificado con 5 años de
-          experiencia ayudando a personas a transformar su estilo de vida a través del ejercicio, la
-          alimentación consciente y la motivación constante.
-        </p>
-        <p>
-          He trabajado con todo tipo de clientes: desde principiantes hasta atletas, guiándolos
-          hacia resultados sostenibles, ya sea pérdida de peso, ganancia muscular, mejora del
-          rendimiento o simplemente sentirse mejor consigo mismos.
-        </p>
-        <p>
-          Mi misión es ayudarte a construir un cuerpo fuerte, saludable y funcional, y que disfrutes
-          el proceso mientras lo haces.
-        </p>
-      </div>
-      <p class="mt-6 text-primary italic">
-        “Entrena por salud, continúa por pasión, y quédate por los resultados.”
+
+      <p
+        class="mt-6 text-lg leading-8 text-gray-300"
+      >
+        Soy entrenador personal certificado y cuento con un diplomado en
+        nutrición. Durante más de <span class="text-primary font-semibold">6 años</span>,
+        he acompañado a personas que buscan transformar su cuerpo, mejorar su
+        salud y desarrollar una mentalidad más fuerte.
       </p>
+
+      <p
+        class="mt-4 text-lg leading-8 text-gray-300"
+      >
+        Mi compromiso es ofrecer un acompañamiento cercano, adaptado a tus
+        objetivos y basado en hábitos sostenibles, para que los resultados sean
+        reales y perduren en el tiempo.
+      </p>
+
+      <!-- Valores -->
+      <div class="mt-8 grid gap-4">
+        <div class="flex items-start gap-3">
+          <span class="text-primary text-xl"><CheckIcon /></span>
+          <p class="text-gray-300">
+            Entrenador certificado.
+          </p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <span class="text-primary text-xl"><CheckIcon /></span>
+          <p class="text-gray-300">
+            Diplomado en nutrición.
+          </p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <span class="text-primary text-xl"><CheckIcon /></span>
+          <p class="text-gray-300">
+            Experto en hipertrófia y musculación.
+          </p>
+        </div>
+      </div>
+
+      <blockquote
+        class="mt-10 border-l-4 border-primary pl-6 italic text-xl text-white"
+      >
+        “Entrena por salud, continúa por pasión y quédate por los resultados.”
+      </blockquote>
     </div>
   </div>
 </section>

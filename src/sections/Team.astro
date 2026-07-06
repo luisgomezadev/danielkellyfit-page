@@ -1,8 +1,8 @@
 ---
 import ButtonSocialLink from '@/components/ButtonSocialLink.astro';
 import InstagramIcon from '@/assets/icons/InstagramIcon.astro';
-
 import SwiperGallery from '@/components/SwiperGallery.vue';
+import CheckIcon from '@/assets/icons/CheckIcon.astro';
 
 const sliderImages = [
   '/images/team/team_1.webp',
@@ -20,77 +20,88 @@ const sliderImages = [
 const { id } = Astro.props;
 ---
 
-<section id={id} class="bg-secondary text-black py-14 lg:py-20 scroll-mt-10">
-  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:px-8 px-4">
-    <div class="flex-1">
+<section
+  id={id}
+  class="scroll-mt-20 bg-[#111] py-16 lg:py-24 text-white"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col lg:flex-row gap-16 items-center"
+  >
+    <!-- Información -->
+    <div class="flex-1 max-w-2xl">
+      <span
+        class="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
+      >
+        Transformaciones reales
+      </span>
+
       <h2
-        class="uppercase text-2xl lg:text-4xl font-bold mb-1 text-slate-100 lg:text-start text-center"
+        class="mt-5 text-4xl font-extrabold"
       >
         Team Daniel Kelly
       </h2>
-      <h3 class="font-semibold text-primary mb-4 lg:text-start text-center">
-        Transforma tu cuerpo y mente.
-      </h3>
-      <p class="text-slate-300 mb-3 leading-relaxed">
-        Con mi enfoque en instrucción deportiva y acondicionamiento físico, te ayudo a alcanzar tus
-        objetivos de forma efectiva, segura y sostenible.
+
+      <p
+        class="mt-6 text-lg leading-8 text-gray-300"
+      >
+        Cada persona tiene un punto de partida diferente. Mi trabajo consiste
+        en diseñar un plan adaptado a tus objetivos y acompañarte durante todo
+        el proceso para que consigas resultados reales y sostenibles.
       </p>
-      <p class="text-slate-300 mb-3 leading-relaxed">
-        Trabajo contigo para mejorar tu rendimiento, composición corporal, fuerza, resistencia y
-        bienestar general, teniendo en cuenta tus necesidades, nivel de experiencia y estilo de
-        vida.
-      </p>
-      <p class="text-slate-300 mb-3 leading-relaxed">
-        Ofrezco coaching online y presencial, combinando planificación nutricional, rutinas
-        personalizadas y seguimiento continuo para garantizar tu progreso. Cada programa está
-        diseñado para adaptarse a tus objetivos, ya sea pérdida de peso, ganancia muscular, mejora
-        de la salud o preparación para competiciones.
-      </p>
-      <p class="text-slate-300 mb-3 leading-relaxed">
-        Aquí puedes ver algunas de las transformaciones reales de mis alumnos, que reflejan no solo
-        cambios físicos, sino también mejoras en su confianza y hábitos de vida.
-      </p>
+
+      <div class="mt-8 space-y-5">
+        <div class="flex gap-3">
+          <span class="text-primary text-xl"><CheckIcon /></span>
+          <p class="text-gray-300">
+            Entrenamiento presencial y online.
+          </p>
+        </div>
+
+        <div class="flex gap-3">
+          <span class="text-primary text-xl"><CheckIcon /></span>
+          <p class="text-gray-300">
+            Rutinas y alimentación completamente personalizadas.
+          </p>
+        </div>
+
+        <div class="flex gap-3">
+          <span class="text-primary text-xl"><CheckIcon /></span>
+          <p class="text-gray-300">
+            Seguimiento constante para garantizar tu progreso.
+          </p>
+        </div>
+      </div>
+
+      <blockquote
+        class="mt-10 border-l-4 border-primary pl-5 italic text-lg text-gray-200"
+      >
+        Las imágenes que ves corresponden a alumnos que confiaron en el proceso
+        y transformaron su estilo de vida.
+      </blockquote>
 
       <div class="flex gap-4 flex-wrap mt-6">
         <ButtonSocialLink
-          title="Instagram teamdanielkelly"
+          title="Instagram Team Daniel Kelly"
           href="https://www.instagram.com/teamdanielkelly/"
-          bg="bg-primary hover:bg-primary/80"
-          className="text-black px-6 py-2"
+          bg="bg-primary hover:bg-primary/90"
+          className="text-black px-6 py-3 font-semibold"
         >
-          <InstagramIcon />teamdanielkelly
+          <InstagramIcon />
+          @teamdanielkelly
         </ButtonSocialLink>
       </div>
     </div>
-    <div class="w-full max-w-md 2xl:max-w-lg mx-auto">
-      <div class="w-full max-w-md 2xl:max-w-lg mx-auto rounded-lg overflow-hidden">
-        <SwiperGallery client:only="vue" images={sliderImages} />
+
+    <!-- Slider -->
+    <div class="w-full max-w-md xl:max-w-lg">
+      <div
+        class="overflow-hidden rounded-3xl border border-white/10 shadow-2xl"
+      >
+        <SwiperGallery
+          client:only="vue"
+          images={sliderImages}
+        />
       </div>
     </div>
   </div>
 </section>
-<script type="module">
-  const images = document.querySelectorAll('#slider img');
-  let current = 0;
-
-  function showSlide(index) {
-    images.forEach((img, i) => {
-      img.style.opacity = i === index ? '1' : '0';
-    });
-  }
-
-  // ⬅️ Exponer función prevImage al scope global
-  window.prevImage = function () {
-    current = (current - 1 + images.length) % images.length;
-    showSlide(current);
-  };
-
-  // ➡️ Exponer función nextImage al scope global
-  window.nextImage = function () {
-    current = (current + 1) % images.length;
-    showSlide(current);
-  };
-
-  // Mostrar primer slide al cargar
-  showSlide(current);
-</script>

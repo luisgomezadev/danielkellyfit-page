@@ -7,54 +7,90 @@ import TikTokIcon from '@/assets/icons/TikTokIcon.astro';
 const { id } = Astro.props;
 ---
 
-<section id={id} class="scroll-mt-30 bg-gradient-to-r from-black to-green-950 text-white relative">
+<section
+  id={id}
+  class="relative scroll-mt-30 overflow-hidden bg-gradient-to-r from-black via-zinc-950 to-green-950 text-white"
+>
   <div
-    class="relative grid lg:grid-cols-2 gap-x-12 gap-y-24 items-center lg:min-h-screen max-w-7xl mx-auto md:px-3 px-4 pt-36 pb-12 lg:py-8"
+    class="relative z-20 grid lg:grid-cols-2 gap-x-12 gap-y-24 items-center lg:min-h-screen max-w-7xl mx-auto px-4 md:px-6 pt-36 pb-12 lg:py-8"
   >
-    <header class="z-30 max-w-xl mx-auto lg:text-start text-center">
-      <div>
-        <h1 class="text-5xl md:text-6xl font-bold tracking-wide mb-3">
-          Entrenador Personal & Creador de Contenido
-        </h1>
-        <p class="text-base md:text-lg opacity-80 text-pretty lg:text-start">
-          Te guío en tu transformación física y mental con planes de entrenamiento y nutrición
-          personalizados, pensados para que avances de forma segura y consigas resultados reales.
+    <!-- Texto -->
+    <header class="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+
+      <h1
+        class="mt-5 text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight"
+      >
+        Transforma tu cuerpo.
+        <span class="block text-primary">Construye tu mejor versión.</span>
+      </h1>
+
+      <p
+        class="mt-6 text-base md:text-lg leading-8 text-gray-300 text-pretty"
+      >
+        Diseñemos un plan de entrenamiento y alimentación adaptado a tus
+        objetivos. Gana músculo, pierde grasa o mejora tu rendimiento con un
+        acompañamiento personalizado y resultados reales.
+      </p>
+
+      <!-- Botones -->
+      <div
+        class="flex flex-wrap gap-4 justify-center lg:justify-start mt-8"
+      >
+        <a
+          href="#contacto"
+          class="rounded-full bg-primary px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/40"
+        >
+          Empieza Hoy
+        </a>
+
+        <a
+          href="#planes"
+          class="rounded-full border border-white/30 px-8 py-4 font-semibold transition-all duration-300 hover:bg-white hover:text-black"
+        >
+          Ver Planes
+        </a>
+      </div>
+
+      <!-- Redes -->
+      <div
+        class="flex items-center justify-center lg:justify-start gap-4 mt-10"
+      >
+        <p class="font-semibold hidden md:block">
+          Sígueme:
         </p>
 
-        <p class="text-sm md:text-base text-pretty italic mt-2 text-primary lg:text-start">
-          - Si vas al gimnasio y no sabes que hacer y tampoco como alimentarte, pues yo te ayudo.
-        </p>
-      </div>
-      <div class="flex gap-4 mt-6 justify-center lg:justify-start items-center">
-        <p class="font-semibold hidden lg:block">Sígueme por:</p>
         <ButtonSocialLink
           title="Facebook"
           href="https://www.facebook.com/profile.php?id=100087054653965"
-          bg="md:bg-white bg-primary"
-          className="hover:text-green-700 text-black md:hover:text-blue-800"
+          bg="bg-white"
+          className="text-black hover:text-blue-700"
         >
           <FacebooIcon />
         </ButtonSocialLink>
+
         <ButtonSocialLink
           title="Instagram"
           href="https://www.instagram.com/danielkelly_fit/"
-          bg="md:bg-white bg-primary"
-          className="hover:text-green-700 text-black md:hover:text-[#9C7594]"
+          bg="bg-white"
+          className="text-black hover:text-pink-500"
         >
           <InstagramIcon />
         </ButtonSocialLink>
+
         <ButtonSocialLink
-          title="Tik Tok"
+          title="TikTok"
           href="https://www.tiktok.com/@danielkellys?lang=es-419"
-          bg="md:bg-white bg-primary"
-          className="hover:text-green-700 text-black md:hover:text-black"
+          bg="bg-white"
+          className="text-black hover:text-black"
         >
           <TikTokIcon />
         </ButtonSocialLink>
       </div>
     </header>
+
+    <!-- Imagen -->
     <div
-      class="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center lg:right-20 lg:left-auto lg:translate-x-0 lg:z-10"
+      class="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-auto lg:right-16 lg:translate-x-0 items-end justify-center z-10 hidden lg:flex"
     >
       <img
         src="/images/daniel_hero.webp"
@@ -64,14 +100,19 @@ const { id } = Astro.props;
       <svg
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
-        class="absolute bottom-10 scale-125"
+        class="absolute bottom-8 scale-[1.45]"
       >
         <path
-          fill="#FFF"
+          fill="#FFFFFF40"
           d="M44.7,-68.8C59.7,-59.8,75,-50.5,83,-36.8C91,-23,91.8,-4.9,87.6,11.3C83.3,27.5,74,41.8,62.5,53.1C51,64.3,37.4,72.7,22.9,76C8.5,79.2,-6.9,77.4,-20.9,72.6C-34.9,67.8,-47.6,60.1,-59.4,49.7C-71.2,39.3,-82.1,26.3,-84.6,11.9C-87.1,-2.6,-81.2,-18.5,-71.7,-30C-62.1,-41.5,-48.9,-48.5,-36.4,-58.6C-23.8,-68.7,-11.9,-81.8,1.5,-84C14.8,-86.3,29.6,-77.7,44.7,-68.8Z"
-          transform="translate(100 100)"></path>
+          transform="translate(100 100)"
+        />
       </svg>
     </div>
   </div>
-  <div class="absolute w-full h-full top-0 left-0 z-20 bg-black/90 lg:bg-white/5"></div>
+
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0 bg-black/75 lg:bg-black/20 z-0"
+  ></div>
 </section>

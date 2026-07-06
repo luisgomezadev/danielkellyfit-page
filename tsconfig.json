@@ -8,12 +8,11 @@
     "dist"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "types": ["astro/client"],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "jsx": "preserve"
+      "@/*": ["./src/*"]
+    }
   }
 }

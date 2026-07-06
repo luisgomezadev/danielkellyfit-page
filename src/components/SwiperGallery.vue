@@ -56,6 +56,7 @@ defineProps({
   border-radius: 0.375rem;
   backdrop-filter: blur(10px);
   transition: background-color 0.2s ease;
+  padding: 0.5rem;
 }
 
 .swiper-button-next:hover,

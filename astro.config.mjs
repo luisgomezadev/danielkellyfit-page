@@ -1,18 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import path from 'path';
-
 import vue from '@astrojs/vue';
+import { fileURLToPath } from 'node:url';
 
-// https://astro.build/config
 export default defineConfig({
+  integrations: [vue()],
+
   vite: {
     resolve: {
       alias: {
-        '@': path.resolve('./src'),
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
   },
-
-  integrations: [vue()],
 });

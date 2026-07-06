@@ -4,40 +4,101 @@ import InstagramIcon from '@/assets/icons/InstagramIcon.astro';
 import TikTokIcon from '@/assets/icons/TikTokIcon.astro';
 ---
 
-<footer class="bg-[#111] text-slate-200 opacity-70 text-sm py-8">
-  <div class="md:px-8 px-4 flex justify-center mb-8">
-    <img src="/images/logo.webp" class="w-32 md:w-52 object-contain" alt="Logo Daniel Kelly Fit" />
-  </div>
-  <div
-    class="max-w-7xl mx-auto flex flex-col md:flex-row gap-x-12 gap-y-6 md:px-8 px-4 justify-between items-center"
-  >
-    <div class="flex items-center gap-5 text-xl">
-      <a href="#perfil" class="flex items-center gap-1"> Perfil </a>
-      <a href="#team" class="flex items-center gap-1"> Team </a>
-      <a href="#servicios" class="flex items-center gap-1"> Servicios </a>
-      <a href="#tienda" class="flex items-center gap-1"> Tienda </a>
-      <a href="#eventos" class="flex items-center gap-1"> Eventos </a>
+<footer class="bg-[#111] border-t border-white/10 text-slate-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+
+    <!-- Logo -->
+    <div class="flex flex-col items-center text-center">
+      <img
+        src="/images/logo.webp"
+        alt="Logo Daniel Kelly Fit"
+        class="w-28 md:w-40 object-contain select-none"
+      />
+
+      <p class="mt-4 text-slate-400 max-w-md">
+        Transformando vidas a través del entrenamiento,
+        la disciplina y hábitos saludables.
+      </p>
     </div>
 
-    <div class="flex items-center gap-5 text-xl">
-      <a href="https://www.instagram.com/danielkelly_fit/" target="_blank">
+    <!-- Navegación -->
+    <nav
+      class="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm md:text-base"
+    >
+      <a href="#perfil" class="transition hover:text-primary">
+        Perfil
+      </a>
+
+      <a href="#team" class="transition hover:text-primary">
+        Team
+      </a>
+
+      <a href="#planes" class="transition hover:text-primary">
+        Planes
+      </a>
+
+      <a href="#tienda" class="transition hover:text-primary">
+        Tienda
+      </a>
+
+      <a href="#eventos" class="transition hover:text-primary">
+        Eventos
+      </a>
+    </nav>
+
+    <!-- Redes -->
+    <div class="mt-10 flex justify-center gap-6 text-2xl">
+      <a
+        href="https://www.instagram.com/danielkelly_fit/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        class="transition duration-300 hover:text-primary hover:-translate-y-1"
+      >
         <InstagramIcon />
       </a>
-      <a href="https://www.facebook.com/profile.php?id=100087054653965" target="_blank">
+
+      <a
+        href="https://www.facebook.com/profile.php?id=100087054653965"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        class="transition duration-300 hover:text-primary hover:-translate-y-1"
+      >
         <FacebookIcon />
       </a>
-      <a href="https://www.tiktok.com/@danielkellys?lang=es-419" target="_blank">
+
+      <a
+        href="https://www.tiktok.com/@danielkellys?lang=es-419"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TikTok"
+        class="transition duration-300 hover:text-primary hover:-translate-y-1"
+      >
         <TikTokIcon />
       </a>
     </div>
-  </div>
-  <div
-    class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row gap-x-12 gap-y-6 md:px-8 px-4 justify-between items-center border-t border-white/5 mt-6 pt-4 text-center text-xs text-slate-300"
-  >
-    <span>© 2025 Daniel Kelly | Todos los derechos reservados.</span>
-    <span
-      >Desarrollado por <a href="https://luisgomezdev.vercel.app/" target="_blank">Luis Gómez</a
-      ></span
+
+    <!-- Copyright -->
+    <div
+      class="mt-10 border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500"
     >
+      <span class="text-center md:text-left">
+        © 2026 Daniel Kelly. Todos los derechos reservados.
+      </span>
+
+      <span class="text-center md:text-right">
+        Diseñado y desarrollado por
+        <a
+          href="https://luisgomezdev.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary hover:underline"
+        >
+          Luis Gómez
+        </a>
+      </span>
+    </div>
+
   </div>
 </footer>
