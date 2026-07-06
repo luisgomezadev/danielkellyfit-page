@@ -1,15 +1,21 @@
 ---
-import CheckIcon from '@/assets/icons/CheckIcon.astro';
+import CheckIcon from "@/assets/icons/CheckIcon.astro";
 
 const { id } = Astro.props;
+
+const whatsapp = '573022071208';
+
+const premiumLink = `https://wa.me/${whatsapp}?text=${encodeURIComponent(
+  'Hola Daniel, quiero unirme al Plan Premium. Me gustaría recibir más información.'
+)}`;
+
+const vipLink = `https://wa.me/${whatsapp}?text=${encodeURIComponent(
+  'Hola Daniel, quiero unirme al Plan VIP. Me gustaría recibir más información.'
+)}`;
 ---
 
-<section
-  id={id}
-  class="scroll-mt-8 bg-[#111] py-20 text-white"
->
+<section id={id} class="scroll-mt-8 bg-[#111] py-20 text-white">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
-
     <!-- Encabezado -->
     <div class="max-w-3xl mx-auto text-center">
       <span
@@ -30,7 +36,6 @@ const { id } = Astro.props;
 
     <!-- Cards -->
     <div class="grid lg:grid-cols-2 gap-8 mt-16">
-
       <!-- Premium -->
       <article
         class="flex flex-col rounded-3xl border border-white/10 bg-zinc-900 p-8 transition-all duration-300 hover:border-primary hover:-translate-y-1"
@@ -41,9 +46,7 @@ const { id } = Astro.props;
           Plan Premium
         </span>
 
-        <h3 class="mt-6 text-5xl font-black">
-          $250.000
-        </h3>
+        <h3 class="mt-6 text-5xl font-black">$250.000</h3>
 
         <p class="mt-2 text-gray-400">
           Ideal para quienes desean un acompañamiento personalizado.
@@ -72,7 +75,9 @@ const { id } = Astro.props;
         </ul>
 
         <a
-          href="#contacto"
+          href={premiumLink}
+          target="_blank"
+          rel="noopener noreferrer"
           class="mt-10 w-full rounded-full bg-primary py-4 text-center font-bold text-black transition hover:opacity-90"
         >
           Solicitar plan
@@ -89,9 +94,7 @@ const { id } = Astro.props;
           Plan VIP
         </span>
 
-        <h3 class="mt-6 text-5xl font-black">
-          $300.000
-        </h3>
+        <h3 class="mt-6 text-5xl font-black">$300.000</h3>
 
         <p class="mt-2 text-gray-400">
           El plan más completo para alcanzar tus objetivos.
@@ -125,14 +128,14 @@ const { id } = Astro.props;
         </ul>
 
         <a
-          href="#contacto"
+          href={vipLink}
+          target="_blank"
+          rel="noopener noreferrer"
           class="mt-10 w-full rounded-full bg-primary py-4 text-center font-bold text-black transition hover:opacity-90"
         >
           Solicitar plan
         </a>
       </article>
-
     </div>
-
   </div>
 </section>

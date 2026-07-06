@@ -5,6 +5,12 @@ import InstagramIcon from '@/assets/icons/InstagramIcon.astro';
 import TikTokIcon from '@/assets/icons/TikTokIcon.astro';
 
 const { id } = Astro.props;
+
+const whatsapp = '573022071208';
+
+const heroWhatsapp = `https://wa.me/${whatsapp}?text=${encodeURIComponent(
+  'Hola Daniel, vi tu página web y me gustaría recibir información sobre tus planes de entrenamiento.'
+)}`;
 ---
 
 <section
@@ -37,7 +43,9 @@ const { id } = Astro.props;
         class="flex flex-wrap gap-4 justify-center lg:justify-start mt-8"
       >
         <a
-          href="#contacto"
+          href={heroWhatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
           class="rounded-full bg-primary px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/40"
         >
           Empieza Hoy
