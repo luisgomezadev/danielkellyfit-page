@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/vue": "^5.1.4",
+    "@midudev/tailwind-animations": "^0.2.0",
     "aos": "^2.3.4",
     "astro": "^5.10.0",
     "autoprefixer": "^10.4.21",
