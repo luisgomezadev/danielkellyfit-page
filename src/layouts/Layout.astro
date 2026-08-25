@@ -1,49 +1,74 @@
 ---
-import Navbar from '@/components/Navbar.astro';
-import Footer from '@/components/Footer.astro';
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Soy Daniel Kelly, entrenador personal especializado en transformación física, hábitos saludables y bienestar integral. Agenda tu asesoría personalizada.",
+  image = "/images/portada.webp",
+} = Astro.props;
+
+const siteUrl = "https://danielkellyfit.vercel.app";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const absoluteImageUrl = new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/images/dk_logo_transparent.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/dk_logo_transparent.webp" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
       content="Daniel Kelly, Personal Trainer, Entrenador Personal, Entrenamiento, Asesoria"
     />
 
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://danielkellyfit.vercel.app/" />
-    <meta property="og:title" content="Daniel Kelly | Entrenador Personal" />
-    <meta property="og:site_name" content="Daniel Kelly | Entrenador Personal" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
     <meta
-      property="og:description"
-      content="Bienvenidos a mi pagina web personal. Soy Daniel Kelly, entrenador personal especializado en transformación física, hábitos saludables y bienestar integral."
+      property="og:site_name"
+      content="Daniel Kelly | Entrenador Personal"
     />
-    <meta
-      property="twitter:image"
-      content="https://raw.githubusercontent.com/LuisGomez11/danielkellyfit-page/main/public/images/portada.webp"
-    />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={absoluteImageUrl} />
+    <meta property="og:locale" content="es_CO" />
 
+    <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://danielkellyfit.vercel.app/" />
-    <meta property="twitter:title" content="Daniel Kelly | Entrenador Personal" />
-    <meta
-      property="twitter:description"
-      content="Bienvenidos a mi pagina web personal. Soy Daniel Kelly, entrenador personal especializado en transformación física, hábitos saludables y bienestar integral."
-    />
-    <meta
-      property="twitter:image"
-      content="https://raw.githubusercontent.com/LuisGomez11/danielkellyfit-page/main/public/images/portada.webp"
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={absoluteImageUrl} />
+
+    <!-- Datos estructurados para Google (rich snippets) -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Daniel Kelly",
+        jobTitle: "Entrenador Personal",
+        description,
+        url: siteUrl,
+        image: absoluteImageUrl,
+        sameAs: ["https://wa.me/573022071208"],
+      })}
     />
   </head>
-  <body class="bg-[#111]">
+  <body class="bg-background-theme">
     <Navbar />
     <main>
       <slot />
@@ -53,14 +78,31 @@ const { title } = Astro.props;
       href="https://wa.me/573022071208"
       target="_blank"
       title="Contáctame por WhatsApp"
-      class="bottom-6 md:bottom-4 right-4 bg-green-600 fixed w-12 h-12 rounded-full p-2 flex items-center justify-center gap-2 cursor-pointer hover:bg-reen-700 z-40 transition-all duration-300 hover:scale-110"
+      class="group fixed bottom-6 right-4 z-40 flex h-12 items-center justify-center gap-1 hover:gap-2 rounded-full bg-green-600 p-2 cursor-pointer transition-all duration-300 hover:bg-green-700 hover:scale-105 hover:shadow-lg hover:shadow-green-600/50"
     >
+      <span
+        class="max-w-0 overflow-hidden whitespace-nowrap text-white text-sm font-medium opacity-0 transition-all duration-300 ease-in-out group-hover:max-w-[180px] group-hover:opacity-100"
+      >
+        Contáctame por WhatsApp
+      </span>
+
       <img
-        src="images/WhatsApp.webp"
-        class="size-10 md:size-7 object-contain"
+        src="/images/WhatsApp.webp"
         alt="Icono de WhatsApp"
+        loading="eager"
+        decoding="async"
+        class="size-8 object-contain transition-transform duration-300 group-hover:scale-110"
       />
     </a>
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      window.addEventListener("load", () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
   </body>
 </html>
 

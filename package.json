@@ -9,10 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vue": "^5.1.4",
+    "@astrojs/vue": "^7.0.2",
     "@midudev/tailwind-animations": "^0.2.0",
     "aos": "^2.3.4",
-    "astro": "^5.10.0",
+    "astro": "^7.2.7",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.4",
     "swiper": "^12.1.4",
