@@ -1,6 +1,9 @@
 ---
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
+import { Image } from "astro:assets";
+import whatsappIcon from "@/assets/images/WhatsApp.webp"; // Mover la imagen a src/assets/images/
+
 interface Props {
   title: string;
   description?: string;
@@ -67,9 +70,9 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
 
     <link
       rel="preload"
-      href="/fonts/Inter-VariableFont_opsz-wght.ttf"
+      href="/fonts/Inter-VariableFont_opsz-wght.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossorigin
     />
   </head>
@@ -78,38 +81,33 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
       <slot />
     </main>
     <Footer />
+    
+    <!-- Botón Flotante con Icono Optimizado -->
     <a
       href="https://wa.me/573022071208"
       target="_blank"
+      rel="noopener noreferrer"
       title="Contáctame por WhatsApp"
-      class="fixed bottom-6 right-4 z-40 flex items-center justify-center hover:gap-2 rounded-full bg-[#25D366] p-3 pr-2.5 cursor-pointer transition-all duration-300 hover:scale-105"
+      class="fixed bottom-6 right-4 z-40 flex items-center justify-center hover:gap-2 rounded-full bg-[#25D366] p-3 cursor-pointer transition-all duration-300 hover:scale-105"
     >
-
-      <img
-        src="/images/WhatsApp.webp"
+      <Image
+        src={whatsappIcon}
         alt="Icono de WhatsApp"
-        loading="eager"
+        width={64}
+        height={64}
+        format="webp"
+        loading="lazy"
         decoding="async"
         class="size-8 object-contain transition-transform duration-300 group-hover:scale-110"
       />
     </a>
-    <script>
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-
-      window.addEventListener("load", () => {
-        window.scrollTo(0, 0);
-      });
-    </script>
   </body>
 </html>
 
 <style is:global>
-
   @font-face {
     font-family: 'Inter';
-    src: url('/fonts/Inter-VariableFont_opsz-wght.ttf') format('truetype-variations');
+    src: url('/fonts/Inter-VariableFont_opsz-wght.woff2') format('truetype-variations');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -117,16 +115,15 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
 
   @font-face {
     font-family: 'Inter';
-    src: url('/fonts/Inter-Italic-VariableFont_opsz-wght.ttf') format('truetype-variations');
+    src: url('/fonts/Inter-Italic-VariableFont_opsz-wght.woff2') format('truetype-variations');
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
   }
 
-  /* Bebas Neue: solo para cuando tú decidas usarla explícitamente */
   @font-face {
     font-family: 'Bebas Neue';
-    src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
+    src: url('/fonts/BebasNeue-Regular.woff2') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
