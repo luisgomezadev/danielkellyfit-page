@@ -22,7 +22,6 @@ const galleryImages = Array.from({ length: 16 }, (_, i) => ({
       </span>
     </TitleSection>
 
-    <!-- Galería Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-12">
       {
         galleryImages.map((image) => (
@@ -48,13 +47,11 @@ const galleryImages = Array.from({ length: 16 }, (_, i) => ({
     </div>
   </div>
 
-  <!-- Modal / Lightbox Nativo -->
   <dialog
     id="image-modal"
     class="bg-transparent p-4 sm:p-6 max-w-5xl max-h-[95vh] w-full backdrop:bg-black/85 backdrop:backdrop-blur-sm open:flex open:items-center open:justify-center outline-none m-auto"
   >
     <div class="relative max-w-full max-h-[85vh] flex items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50 shadow-2xl">
-      <!-- Botón para cerrar -->
       <button
         id="close-modal"
         type="button"
