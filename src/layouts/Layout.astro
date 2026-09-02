@@ -67,13 +67,21 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
         sameAs: ["https://wa.me/573022071208"],
       })}
     />
+
+    <link
+      rel="preload"
+      href="/fonts/Inter-VariableFont_opsz-wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
   </head>
   <body class="bg-background-theme">
-    <Navbar />
+    <!-- <Navbar /> -->
     <main>
       <slot />
     </main>
-    <Footer />
+    <!-- <Footer />
     <a
       href="https://wa.me/573022071208"
       target="_blank"
@@ -93,7 +101,7 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
         decoding="async"
         class="size-8 object-contain transition-transform duration-300 group-hover:scale-110"
       />
-    </a>
+    </a> -->
     <script>
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
@@ -107,6 +115,32 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
 </html>
 
 <style is:global>
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-VariableFont_opsz-wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Italic-VariableFont_opsz-wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Bebas Neue: solo para cuando tú decidas usarla explícitamente */
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
@@ -117,5 +151,6 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
   }
 </style>
