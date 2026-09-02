@@ -32,51 +32,64 @@ const heroWhatsapp = `https://wa.me/${whatsapp}?text=${encodeURIComponent(
 
   <!-- OVERLAY - DESKTOP -->
   <div
-    class="absolute inset-0 z-20 hidden lg:block bg-gradient-to-t from-background-secondary via-background-secondary via-5% to-background-secondary/50"
+    class="absolute inset-0 z-30 hidden lg:block bg-gradient-to-t from-background-secondary via-background-secondary via-5% to-background-secondary/50"
+  ></div>
+
+  <!-- EFECTO DE HUMO / BRUMA EN ESQUINA DERECHA -->
+  <div
+    class="absolute bottom-0 right-0 hidden lg:block z-10 w-[60%] h-[35%] md:h-[60%] bg-gradient-to-tl from-primary/35 via-primary/15 to-transparent blur-[100px] pointer-events-none transform translate-x-10 translate-y-10"
+  ></div>
+  <div
+    class="absolute bottom-0 right-0 hidden lg:block z-10 w-[30%] h-[35%] md:h-[65%] bg-gradient-to-tl from-primary/25 to-transparent blur-[60px] pointer-events-none"
   ></div>
 
   <div
-    class="relative grid lg:grid-cols-2 gap-x-12 items-end w-full max-w-[88rem] mx-auto px-4 md:px-6 pb-12 pt-32 lg:py-0 min-h-screen"
+    class="relative grid lg:grid-cols-2 gap-x-12 items-end w-full max-w-[89rem] mx-auto px-4 md:px-6 pb-12 pt-32 lg:py-0 min-h-screen"
   >
-    <!-- COLUMNA IZQUIERDA - TEXTO -->
-    <header class="z-30 flex flex-col justify-end pt-[22rem] md:pt-0 lg:pb-16">
+    <header class="z-50 flex flex-col justify-end pt-[22rem] md:pt-0 lg:pb-16">
       <span
-        class="text-primary font-medium text-sm tracking-widest block mb-4"
+        class="text-primary font-medium text-xs tracking-widest block mb-4 uppercase"
       >
         Especialista en hipertrofia y desarrollo muscular - coach online y
         presencial VIP
       </span>
 
       <h1
-        class="text-[5.5rem] sm:text-[7rem] md:text-[130px] font-bold tracking-normal leading-[.9] mb-4 uppercase font-display"
+        class="text-[6rem] sm:text-[7rem] md:text-[130px] font-bold tracking-normal leading-[.9] mb-4 uppercase font-display"
       >
         Daniel<br />
         <span class="text-primary">Kelly</span>
       </h1>
 
-      <p class="font-display text-2xl md:text-4xl opacity-65 tracking-wide">
+      <p class="font-display text-2xl md:text-4xl opacity-65 tracking-wider">
         #TEAMDANIELKELLY
       </p>
 
-      <p class="pl-4 border-l-4 border-primary text-sm md:text-base font-medium mt-6 mb-8">
+      <p class="pl-4 border-l-4 border-primary text-sm md:text-base font-normal mt-6 mb-8">
         <strong>
           "Te ayudo a conseguir el cuerpo de tus sueños en solo 12 semanas."
         </strong>
       </p>
 
-      <div>
+      <!-- Botones ajustados para no expandirse en mobile -->
+      <div class="flex flex-row flex-wrap items-center gap-4">
         <a
           href={heroWhatsapp}
-          class="bg-primary text-background-theme py-3 px-6 inline-block transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg hover:shadow-primary/50 uppercase tracking-widest font-bold"
+          class="w-fit bg-primary text-background-theme py-3 px-6 inline-block transition-all duration-300 hover:bg-primary/90 hover:scale-[1.02] uppercase tracking-widest font-bold text-sm text-center"
           target="_blank"
           rel="noopener noreferrer"
         >
           Quiero mi transformación
         </a>
+        <a
+          href="#estrategias"
+          class="w-fit font-semibold transition-all duration-300 py-3 px-6 inline-block hover:text-primary hover:scale-[1.02] uppercase tracking-widest text-sm border border-primary/50 hover:border-primary/80 text-center"
+        >
+          Ver estrategias
+        </a>
       </div>
     </header>
 
-    <!-- COLUMNA DERECHA - MOSTRAR DE LA CINTURA PARA ARRIBA -->
     <div
       class="relative hidden lg:flex h-screen items-end justify-center z-10 overflow-hidden animate-fade-in animate-delay-300 pointer-events-none"
     >

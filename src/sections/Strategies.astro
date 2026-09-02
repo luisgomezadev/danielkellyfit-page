@@ -1,0 +1,92 @@
+---
+import PricingCard from "@/components/PricingCard.astro";
+import TitleSection from "@/components/TitleSection.astro";
+
+const { id } = Astro.props;
+
+const whatsapp = "573022071208";
+
+const getWhatsappLink = (plan: string) =>
+  `https://wa.me/${whatsapp}?text=${encodeURIComponent(
+    `Hola Daniel, me interesa iniciar la ${plan}. ¿Me das más información?`
+  )}`;
+
+const plans = [
+  {
+    title: "ESTRATEGIA PREMIUM ONLINE",
+    duration: "4 semanas",
+    priceCop: "$259.000",
+    priceUsdEur: "$82 USD  ·  €71 EUR",
+    whatsappPlanName: "ESTRATEGIA PREMIUM ONLINE (4 semanas)",
+    features: [
+      "Plan de entrenamiento",
+      "Plan de alimentación",
+      "Guía en suplementación",
+      "Estructurado para tu nivel y necesidad",
+      "Actualización cada 2 semanas",
+    ],
+  },
+  {
+    title: "ESTRATEGIA PERSEVERANTE ONLINE",
+    duration: "12 semanas",
+    priceCop: "$668.000",
+    priceUsdEur: "$212 USD  ·  €183 EUR",
+    savingsText: "Ahorras $100.000 COP vs. pagar mes a mes",
+    isPopular: true,
+    whatsappPlanName: "ESTRATEGIA PERSEVERANTE ONLINE (12 semanas)",
+    features: [
+      "Plan de entrenamiento",
+      "Plan de alimentación",
+      "Guía en suplementación",
+      "Estructurado para tu nivel y necesidad",
+      "Actualización cada 2 semanas",
+      "1 videollamada semanal de seguimiento",
+      "1 videollamada semanal entrenando en vivo",
+      "Progresión estructural de 12 semanas (1 trimestre)",
+    ],
+  },
+  {
+    title: "ESTRATEGIA 1-1 PRESENCIAL",
+    duration: "4 semanas",
+    priceCop: "$349.000",
+    whatsappPlanName: "ESTRATEGIA 1-1 PRESENCIAL (4 semanas)",
+    features: [
+      "Entrenamiento presencial en el gimnasio",
+      "Me tendrás frente a frente guiando tu entrenamiento",
+      "Plan de entrenamiento",
+      "Plan de alimentación",
+      "Guía en suplementación",
+      "Estructurado para tu nivel y necesidad",
+      "Actualización cada 2 semanas",
+    ],
+  },
+];
+---
+
+<section
+  id={id}
+  class="bg-background-secondary py-16 lg:py-24 text-white"
+>
+  <div class="max-w-6xl mx-auto px-4 lg:px-8">
+    <TitleSection subtitle="inversión">
+      Elige tu <span class="text-primary">estrategia</span>
+    </TitleSection>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 items-stretch">
+      {
+        plans.map((plan) => (
+          <PricingCard
+            title={plan.title}
+            duration={plan.duration}
+            priceCop={plan.priceCop}
+            priceUsdEur={plan.priceUsdEur}
+            savingsText={plan.savingsText}
+            features={plan.features}
+            isPopular={plan.isPopular}
+            whatsappLink={getWhatsappLink(plan.whatsappPlanName)}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+const { title, subtitle } = Astro.props;
+---
+
+<header class="mb-4">
+    <span
+        class="text-xs font-bold text-primary uppercase tracking-widest mb-4 block"
+        >{subtitle}</span
+    >
+    <div class="mb-4">
+        <h2
+            class="text-5xl md:text-7xl font-bold text-accent uppercase font-display tracking-wide"
+        >
+            <slot />
+        </h2>
+        <div class="h-0.5 bg-primary w-20 my-4"></div>
+    </div>
+</header>

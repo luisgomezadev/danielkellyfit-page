@@ -1,0 +1,94 @@
+---
+import CheckIcon from "@/assets/icons/CheckIcon.astro";
+
+interface Props {
+  title: string;
+  duration: string;
+  priceCop: string;
+  priceUsdEur?: string;
+  savingsText?: string;
+  features: string[];
+  isPopular?: boolean;
+  whatsappLink: string;
+}
+
+const {
+  title,
+  duration,
+  priceCop,
+  priceUsdEur,
+  savingsText,
+  features,
+  isPopular = false,
+  whatsappLink,
+} = Astro.props;
+---
+
+<article
+  class={`bg-background-card py-8 px-6 hover:bg-background-hero transition-all duration-300 w-full flex flex-col justify-between ${
+    isPopular ? "border border-primary/30 relative" : ""
+  }`}
+>
+  <div>
+    <header class="mb-2">
+      <h2 class="text-2xl font-display tracking-wider">
+        {title}
+      </h2>
+      <h3 class="uppercase text-primary text-sm tracking-wider font-bold">
+        {duration}
+      </h3>
+    </header>
+    <div>
+      <span class="text-4xl lg:text-5xl font-display tracking-wide text-primary block">
+        {priceCop} <span class="text-lg text-accent opacity-80">COP</span>
+      </span>
+      {
+        priceUsdEur && (
+          <span class="text-sm text-accent opacity-80 block">
+            {priceUsdEur}
+          </span>
+        )
+      }
+      {
+        savingsText && (
+          <span class="text-xs text-primary block mt-3 font-semibold">
+            {savingsText}
+          </span>
+        )
+      }
+    </div>
+    <div class="mt-6">
+      <ul class="space-y-3 opacity-70">
+        {
+          features.map((feature, index) => {
+            const isLast = index === features.length - 1;
+            return (
+              <li
+                class={`flex items-start gap-2.5 ${
+                  !isLast ? "border-b border-primary/10 pb-2" : ""
+                }`}
+              >
+                <div class="w-5 h-5 shrink-0 flex items-center justify-center mt-0.5">
+                  <CheckIcon class="text-primary w-full h-full" />
+                </div>
+                <span>{feature}</span>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+
+  <!-- Botón alineado al final -->
+  <div class="mt-8 pt-4 border-t border-primary/10">
+    <a
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-full bg-primary text-background-theme py-3 px-4 block text-center font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-primary/90 hover:scale-[1.02]"
+    >
+      Quiero esta estrategia
+    </a>
+  </div>
+</article>

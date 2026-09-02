@@ -13,7 +13,7 @@ export default {
         display: ['"Bebas Neue"', 'sans-serif'],
       },
       colors: {
-        primary: '#C9A84C',
+        primary: '#C5E91D',
         secondary: '#0E1410',
         accent: '#F5F5F0',
         "background-theme": '#121212',
