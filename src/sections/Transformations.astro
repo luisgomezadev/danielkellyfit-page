@@ -3,7 +3,6 @@ import TitleSection from "@/components/TitleSection.astro";
 
 const { id } = Astro.props;
 
-// Genera un array con las 13 imágenes de la carpeta public/images/team/
 const galleryImages = Array.from({ length: 16 }, (_, i) => ({
   src: `/images/team/${i + 1}.webp`,
   alt: `Transformación ${i + 1} - Team Daniel Kelly`,
@@ -12,7 +11,7 @@ const galleryImages = Array.from({ length: 16 }, (_, i) => ({
 
 <section
   id={id}
-  class="bg-background-secondary py-16 lg:py-24 text-accent"
+  class="bg-background-secondary py-16 lg:py-24 text-accent overflow-hidden"
 >
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <TitleSection subtitle="Resultados reales">
@@ -22,12 +21,14 @@ const galleryImages = Array.from({ length: 16 }, (_, i) => ({
       </span>
     </TitleSection>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-12">
+    <div 
+      class="flex sm:grid overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-12 py-4 -mx-6 px-[calc(50%-40vw)] sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    >
       {
         galleryImages.map((image) => (
           <button
             type="button"
-            class="bg-background-card p-3 border border-zinc-800/80 hover:border-primary/40 transition-all duration-300 group flex items-center justify-center overflow-hidden text-left"
+            class="flex-shrink-0 w-[80vw] sm:w-auto snap-center bg-background-card p-3 border border-zinc-800/80 hover:border-primary/40 transition-all duration-300 group flex items-center justify-center overflow-hidden text-left"
             data-modal-trigger={image.src}
             data-modal-alt={image.alt}
           >

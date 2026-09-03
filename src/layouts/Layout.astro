@@ -1,8 +1,7 @@
 ---
-import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
 import { Image } from "astro:assets";
-import whatsappIcon from "@/assets/images/WhatsApp.webp"; // Mover la imagen a src/assets/images/
+import whatsappIcon from "@/assets/images/WhatsApp.webp";
 
 interface Props {
   title: string;
@@ -26,7 +25,10 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/images/dk_logo_transparent.webp" />
+    
+    <link rel="icon" href="/images/dk_logo_black_transparent.webp" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/images/dk_logo_transparent.webp" media="(prefers-color-scheme: dark)" />
+
     <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -34,7 +36,7 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
     <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
-      content="Daniel Kelly, Personal Trainer, Entrenador Personal, Entrenamiento, Asesoria"
+      content="Daniel Kelly, Personal Trainer, Entrenador Personal, Entrenamiento, Asesoria, Transformación Física, Hábitos Saludables, Bienestar Integral, Fitness, Salud, Nutrición, Ejercicio, Motivación, Coaching, Asesoría Personalizada"
     />
 
     <meta property="og:type" content="website" />
@@ -75,14 +77,21 @@ const absoluteImageUrl = new URL(image, siteUrl).toString();
       type="font/woff2"
       crossorigin
     />
+
+    <link
+      rel="preload"
+      href="/fonts/BebasNeue-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
-  <body class="bg-background-theme">
+  <body class="bg-background-secondary">
     <main>
       <slot />
     </main>
     <Footer />
     
-    <!-- Botón Flotante con Icono Optimizado -->
     <a
       href="https://wa.me/573022071208"
       target="_blank"
