@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
+import { WHATSAPP_NUMBER } from "@/data/constans.ts";
 import heroImg from "@/assets/images/daniel_hero_section.webp";
 
 const { id } = Astro.props;
-const whatsapp = "573022071208";
-const heroWhatsapp = `https://wa.me/${whatsapp}?text=${encodeURIComponent(
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   "Hola Daniel, vi tu página web y me gustaría recibir información sobre tus planes de entrenamiento.",
 )}`;
 ---
@@ -32,7 +32,6 @@ const heroWhatsapp = `https://wa.me/${whatsapp}?text=${encodeURIComponent(
     >
     </div>
 
-    <!-- Columna de Contenido -->
     <header class="z-40 flex flex-col justify-end pt-[22rem] md:pt-12 lg:pb-16">
       <span
         class="text-primary font-medium text-xs tracking-widest block mb-4 uppercase"
@@ -62,7 +61,7 @@ const heroWhatsapp = `https://wa.me/${whatsapp}?text=${encodeURIComponent(
 
       <div class="flex flex-row flex-wrap items-center gap-4">
         <a
-          href={heroWhatsapp}
+          href={WHATSAPP_URL}
           class="w-fit bg-primary text-background-theme py-3 px-6 inline-block transition-all duration-300 hover:bg-primary/90 uppercase tracking-widest font-bold text-sm text-center"
           target="_blank"
           rel="noopener noreferrer"
@@ -78,7 +77,6 @@ const heroWhatsapp = `https://wa.me/${whatsapp}?text=${encodeURIComponent(
       </div>
     </header>
 
-    <!-- Contenedor Único de Imagen (Absolute en móvil, Relative en Desktop) -->
     <div
       class="absolute lg:relative inset-0 lg:inset-auto lg:h-screen flex items-end justify-center z-0 lg:z-10 overflow-hidden pointer-events-none"
     >
