@@ -27,7 +27,7 @@ const galleryImages = Array.from({ length: 16 }, (_, i) => ({
         galleryImages.map((image) => (
           <button
             type="button"
-            class="bg-background-card p-3 border border-zinc-800/80 hover:border-primary/40 transition-all duration-300 group flex items-center justify-center overflow-hidden cursor-pointer text-left"
+            class="bg-background-card p-3 border border-zinc-800/80 hover:border-primary/40 transition-all duration-300 group flex items-center justify-center overflow-hidden text-left"
             data-modal-trigger={image.src}
             data-modal-alt={image.alt}
           >
