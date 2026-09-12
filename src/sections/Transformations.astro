@@ -27,11 +27,8 @@ const galleryImages = Array.from({ length: 16 }, (_, i) => ({
     >
       {
         galleryImages.map((image) => (
-          <button
-            type="button"
+          <div
             class="flex-shrink-0 w-[80vw] sm:w-auto snap-center bg-background-card p-3 border border-zinc-800/80 hover:border-primary/40 transition-all duration-300 group flex items-center justify-center overflow-hidden text-left"
-            data-modal-trigger={image.src}
-            data-modal-alt={image.alt}
           >
             <div class="w-full aspect-square overflow-hidden bg-black/40 flex items-center justify-center">
               <img
@@ -43,7 +40,7 @@ const galleryImages = Array.from({ length: 16 }, (_, i) => ({
                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-          </button>
+          </div>
         ))
       }
     </div>
